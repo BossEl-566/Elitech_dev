@@ -160,7 +160,7 @@ function Header() {
       <div className="mx-auto flex h-24 md:h-28 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo - Responsive sizes */}
         <Link href="/" className="flex shrink-0 items-center transform transition hover:scale-105 duration-300">
-          <div className="relative h-12 w-[180px] sm:h-14 sm:w-[200px] md:h-16 md:w-[240px] lg:h-20 lg:w-[280px]">
+          <div className="relative h-12 w-45 sm:h-14 sm:w-50 md:h-16 md:w-60 lg:h-20 lg:w-70">
             <Image
               src={logo}
               alt="ELITECH Logo"
@@ -273,7 +273,7 @@ function Header() {
                     <Link
                       href="#contact"
                       onClick={() => setMobileOpen(false)}
-                      className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#36B7F0] to-[#5CC6F3] px-6 py-4 text-base font-bold text-[#141a47] transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                      className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-linear-to-r from-[#36B7F0] to-[#5CC6F3] px-6 py-4 text-base font-bold text-[#141a47] transition-all duration-300 hover:scale-105 hover:shadow-xl"
                     >
                         Build
                       <Rocket size={18} />
@@ -306,7 +306,7 @@ function Header() {
 
                   {/* Mega Menu - Icons inside here */}
                   {!item.isHome && item.sections && (
-                    <div className="invisible absolute left-1/2 top-full z-50 mt-3 w-[800px] lg:w-[900px] -translate-x-1/2 rounded-2xl bg-white opacity-0 shadow-2xl transition-all duration-300 group-hover:visible group-hover:mt-4 group-hover:opacity-100">
+                    <div className="invisible absolute left-1/2 top-full z-50 mt-3 w-200 lg:w-225 -translate-x-1/2 rounded-2xl bg-white opacity-0 shadow-2xl transition-all duration-300 group-hover:visible group-hover:mt-4 group-hover:opacity-100">
                       <div className="p-4 lg:p-6">
                         <div className="grid gap-4 lg:gap-6 md:grid-cols-2 lg:grid-cols-3">
                           {item.sections?.map((section) => {
@@ -314,10 +314,10 @@ function Header() {
                             return (
                               <div
                                 key={section.title}
-                                className="group/section rounded-xl border border-gray-100 bg-gradient-to-br from-gray-50 to-white p-4 lg:p-5 transition-all duration-300 hover:shadow-xl hover:border-[#36B7F0]/20 hover:scale-[1.02]"
+                                className="group/section rounded-xl border border-gray-100 bg-linear-to-br from-gray-50 to-white p-4 lg:p-5 transition-all duration-300 hover:shadow-xl hover:border-[#36B7F0]/20 hover:scale-[1.02]"
                               >
                                 <div className="mb-3 lg:mb-4 flex items-start gap-2 lg:gap-3">
-                                  <div className="rounded-lg bg-gradient-to-br from-[#141a47] to-[#1e2a6e] p-2 shadow-lg">
+                                  <div className="rounded-lg bg-linear-to-br from-[#141a47] to-[#1e2a6e] p-2 shadow-lg">
                                     <SectionIcon size={18} className="text-[#36B7F0]" />
                                   </div>
                                   <div className="flex-1">
@@ -336,7 +336,7 @@ function Header() {
                                       <Link
                                         key={link.name}
                                         href={link.href}
-                                        className="group/link flex items-center gap-2 lg:gap-3 rounded-lg px-2 lg:px-3 py-1.5 lg:py-2 text-xs lg:text-sm font-medium text-gray-700 transition-all duration-300 hover:bg-gradient-to-r hover:from-[#36B7F0]/10 hover:to-transparent hover:text-[#36B7F0] hover:translate-x-1"
+                                        className="group/link flex items-center gap-2 lg:gap-3 rounded-lg px-2 lg:px-3 py-1.5 lg:py-2 text-xs lg:text-sm font-medium text-gray-700 transition-all duration-300 hover:bg-linear-to-r hover:from-[#36B7F0]/10 hover:to-transparent hover:text-[#36B7F0] hover:translate-x-1"
                                       >
                                         <LinkIcon size={14} className="text-gray-400 group-hover/link:text-[#36B7F0]" />
                                         {link.name}
@@ -380,11 +380,11 @@ function Header() {
             <div className="hidden lg:flex">
               <Link
                 href="#contact"
-                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#36B7F0] to-[#5CC6F3] px-5 lg:px-7 py-2.5 lg:py-3.5 text-sm lg:text-base font-bold text-[#141a47] transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-linear-to-r from-[#36B7F0] to-[#5CC6F3] px-5 lg:px-7 py-2.5 lg:py-3.5 text-sm lg:text-base font-bold text-[#141a47] transition-all duration-300 hover:scale-105 hover:shadow-xl"
               >
                 <span className="relative z-10">Build</span>
                 <Rocket size={16} className="relative z-10 transition-transform group-hover:translate-x-1" />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#5CC6F3] to-[#36B7F0] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-linear-to-r from-[#5CC6F3] to-[#36B7F0] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               </Link>
             </div>
           </>
