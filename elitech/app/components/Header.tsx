@@ -150,7 +150,7 @@ function Header() {
           href="/"
           className="flex shrink-0 items-center transition duration-300 hover:scale-105"
         >
-          <div className="relative h-10 w-[150px] sm:h-12 sm:w-[180px] md:h-14 md:w-[210px] lg:h-16 lg:w-[230px]">
+          <div className="relative h-10 w-37.5 sm:h-12 sm:w-45 md:h-14 md:w-52.5 lg:h-16 lg:w-57.5">
             <Image
               src={logo}
               alt="ELITECH Logo"
@@ -180,7 +180,7 @@ function Header() {
                 </Link>
 
                 {!item.isHome && item.sections && (
-                  <div className="invisible absolute left-1/2 top-full z-50 mt-4 w-[920px] -translate-x-1/2 rounded-3xl border border-slate-200 bg-white p-6 opacity-0 shadow-[0_20px_80px_rgba(0,0,0,0.25)] transition-all duration-300 group-hover:visible group-hover:opacity-100">
+                  <div className="invisible absolute left-1/2 top-full z-50 mt-4 w-230 -translate-x-1/2 rounded-3xl border border-slate-200 bg-white p-6 opacity-0 shadow-[0_20px_80px_rgba(0,0,0,0.25)] transition-all duration-300 group-hover:visible group-hover:opacity-100">
                     <div className="grid gap-6 lg:grid-cols-3">
                       {item.sections.map((section) => {
                         const SectionIcon = section.icon;
@@ -252,7 +252,7 @@ function Header() {
 
           <Link
             href="#contact"
-            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#36B7F0] to-[#5CC6F3] px-7 py-3 font-bold text-[#141a47] transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-linear-to-r from-[#36B7F0] to-[#5CC6F3] px-7 py-3 font-bold text-[#141a47] transition-all duration-300 hover:scale-105 hover:shadow-xl"
           >
             <span className="relative z-10">Build</span>
             <Rocket size={16} className="relative z-10 transition-transform group-hover:translate-x-1" />
