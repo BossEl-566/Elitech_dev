@@ -256,7 +256,7 @@ function Header() {
           >
             <span className="relative z-10">Build</span>
             <Rocket size={16} className="relative z-10 transition-transform group-hover:translate-x-1" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#5CC6F3] to-[#36B7F0] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+            <div className="absolute inset-0 bg-linear-to-r from-[#5CC6F3] to-[#36B7F0] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           </Link>
         </div>
 
