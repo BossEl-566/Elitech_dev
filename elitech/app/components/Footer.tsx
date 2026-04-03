@@ -149,7 +149,7 @@ function Footer() {
             {/* Brand Column */}
             <div className="lg:col-span-1">
               <Link href="/" className="mb-4 inline-block">
-                <div className="relative h-12 w-[180px] transition-transform hover:scale-105">
+                <div className="relative h-12 w-45 transition-transform hover:scale-105">
                   <Image
                     src={logo}
                     alt="ELITECH Logo"
@@ -241,14 +241,14 @@ function Footer() {
 
                   <button
                     type="submit"
-                    className="group relative inline-flex h-12 items-center gap-2 overflow-hidden rounded-lg bg-gradient-to-r from-[#36B7F0] to-[#5CC6F3] px-6 font-semibold text-[#141a47] transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                    className="group relative inline-flex h-12 items-center gap-2 overflow-hidden rounded-lg bg-linear-to-r from-[#36B7F0] to-[#5CC6F3] px-6 font-semibold text-[#141a47] transition-all duration-300 hover:scale-105 hover:shadow-lg"
                   >
                     <span className="relative z-10 text-sm">Subscribe</span>
                     <Send
                       size={16}
                       className="relative z-10 transition-transform group-hover:translate-x-1"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#5CC6F3] to-[#36B7F0] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                    <div className="absolute inset-0 bg-linear-to-r from-[#5CC6F3] to-[#36B7F0] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                   </button>
                 </form>
 
