@@ -29,45 +29,45 @@ const footerSections = [
   {
     title: "Services",
     links: [
-      { name: "Web Development", href: "#web-development" },
-      { name: "Mobile App Development", href: "#mobile-development" },
-      { name: "AI Solutions", href: "#ai-solutions" },
-      { name: "Cloud Integration", href: "#cloud-integration" },
-      { name: "UI/UX Design", href: "#uiux" },
-      { name: "Custom Software", href: "#custom-software" },
+      { name: "Web Development", href: "/service/web-development" },
+      { name: "Mobile App Development", href: "/service/mobile-app-development" },
+      { name: "AI Solutions", href: "/service/ai-solutions" },
+      { name: "Cloud Integration", href: "/service/cloud-integration" },
+      { name: "UI/UX Design", href: "/service/ui-ux-design" },
+      { name: "Custom Software", href: "/service/custom-software" },
     ],
   },
   {
     title: "Solutions",
     links: [
-      { name: "Business Management", href: "#business-systems" },
-      { name: "School Management", href: "#school-systems" },
-      { name: "Hospital Management", href: "#hospital-systems" },
-      { name: "E-commerce Platforms", href: "#ecommerce" },
-      { name: "Client Portals", href: "#client-portals" },
-      { name: "Payment Integrations", href: "#payments" },
+      { name: "Business Management", href: "/solution/business-management-systems" },
+      { name: "School Management", href: "/solution/school-management-systems" },
+      { name: "Hospital Management", href: "/solution/hospital-management-systems" },
+      { name: "E-commerce Platforms", href: "/solution/ecommerce-platforms" },
+      { name: "Client Portals", href: "/solution/client-portals" },
+      { name: "Payment Integrations", href: "/solution/payment-integrations" },
     ],
   },
   {
     title: "Company",
     links: [
-      { name: "About Us", href: "#about" },
-      { name: "Our Projects", href: "#projects" },
-      { name: "Case Studies", href: "#case-studies" },
-      { name: "Blog", href: "#blog" },
-      { name: "Careers", href: "#careers" },
-      { name: "Contact Us", href: "#contact" },
+      { name: "About Us", href: "/about" },
+      { name: "Our Projects", href: "/projects" },
+      { name: "Case Studies", href: "/projects/case-studies" },
+      { name: "Blog", href: "/blog" },
+      { name: "Careers", href: "/careers" },
+      { name: "Contact Us", href: "/contact" },
     ],
   },
   {
     title: "Resources",
     links: [
-      { name: "Documentation", href: "#docs" },
-      { name: "Support Center", href: "#support" },
-      { name: "Privacy Policy", href: "#privacy" },
-      { name: "Terms of Service", href: "#terms" },
-      { name: "FAQ", href: "#faq" },
-      { name: "Sitemap", href: "#sitemap" },
+      { name: "Documentation", href: "/documentation" },
+      { name: "Support Center", href: "/support" },
+      { name: "Privacy Policy", href: "/privacy-policy" },
+      { name: "Terms of Service", href: "/terms-of-service" },
+      { name: "FAQ", href: "/faq" },
+      { name: "Sitemap", href: "/sitemap" },
     ],
   },
 ];
@@ -83,8 +83,8 @@ const socialLinks = [
 const contactInfo = [
   { icon: Mail, text: "info@elitech.com", href: "mailto:info@elitech.com" },
   { icon: Phone, text: "+1 (234) 567-890", href: "tel:+1234567890" },
-  { icon: MapPin, text: "123 Tech Street, Silicon Valley, CA 94025", href: "#" },
-  { icon: Clock, text: "Mon - Fri: 9:00 AM - 6:00 PM", href: "#" },
+  { icon: MapPin, text: "123 Tech Street, Silicon Valley, CA 94025", href: "/contact" },
+  { icon: Clock, text: "Mon - Fri: 9:00 AM - 6:00 PM", href: "/contact" },
 ];
 
 const stats = [
@@ -116,7 +116,6 @@ function Footer() {
       }}
     >
       <div className="relative z-10">
-        {/* Top Section with Stats */}
         <div className="border-b border-white/10">
           <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
@@ -143,13 +142,11 @@ function Footer() {
           </div>
         </div>
 
-        {/* Main Footer Content */}
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
-            {/* Brand Column */}
             <div className="lg:col-span-1">
               <Link href="/" className="mb-4 inline-block">
-                <div className="relative h-12 w-45 transition-transform hover:scale-105">
+                <div className="relative h-12 w-[180px] transition-transform hover:scale-105">
                   <Image
                     src={logo}
                     alt="ELITECH Logo"
@@ -184,7 +181,6 @@ function Footer() {
               </div>
             </div>
 
-            {/* Links Columns */}
             {footerSections.map((section) => (
               <div key={section.title}>
                 <h3 className="mb-4 text-base font-bold uppercase tracking-wider text-[#36B7F0]">
@@ -210,7 +206,6 @@ function Footer() {
             ))}
           </div>
 
-          {/* Newsletter Section */}
           <div className="mt-12 border-t border-white/10 pt-12">
             <div className="grid gap-8 md:grid-cols-2">
               <div>
@@ -262,7 +257,6 @@ function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="border-t border-white/10">
           <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
             <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
@@ -270,7 +264,6 @@ function Footer() {
                 © {new Date().getFullYear()} ELITECH. All rights reserved.
               </div>
 
-              {/* Social Links */}
               <div className="flex gap-3">
                 {socialLinks.map((social) => {
                   const Icon = social.icon;
@@ -293,22 +286,21 @@ function Footer() {
                 })}
               </div>
 
-              {/* Legal Links */}
               <div className="flex gap-6 text-sm">
                 <Link
-                  href="#privacy"
+                  href="/privacy-policy"
                   className="text-white/60 transition hover:text-[#36B7F0]"
                 >
                   Privacy Policy
                 </Link>
                 <Link
-                  href="#terms"
+                  href="/terms-of-service"
                   className="text-white/60 transition hover:text-[#36B7F0]"
                 >
                   Terms of Use
                 </Link>
                 <Link
-                  href="#cookies"
+                  href="/cookie-policy"
                   className="text-white/60 transition hover:text-[#36B7F0]"
                 >
                   Cookie Policy
@@ -319,14 +311,12 @@ function Footer() {
         </div>
       </div>
 
-      {/* Decorative Elements */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -left-20 -top-20 h-64 w-64 rounded-full bg-[#36B7F0]/5 blur-3xl" />
         <div className="absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-[#36B7F0]/5 blur-3xl" />
         <div className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/5 blur-3xl" />
       </div>
 
-      {/* Back to Top Button */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         className="fixed bottom-6 right-6 z-50 rounded-full bg-[#36B7F0] p-3 text-[#141a47] shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl lg:bottom-8 lg:right-8"
