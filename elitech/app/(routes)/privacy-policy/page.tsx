@@ -110,7 +110,7 @@ function PrivacyPolicy() {
           </div>
 
           <div className="relative flex justify-center lg:justify-end">
-            <div className="relative h-[280px] w-full max-w-[520px]">
+            <div className="relative h-70 w-full max-w-130">
               <Image
                 src={privacy}
                 alt="Privacy illustration"
