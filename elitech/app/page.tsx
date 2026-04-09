@@ -152,9 +152,9 @@ function Home() {
     <div className="relative overflow-hidden bg-[#f7f5f0]" style={{ fontFamily: "'Droid Sans Mono', 'Courier New', monospace" }}>
       
       {/* HERO SECTION */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#f7f5f0] to-[#ece8e0] min-h-screen">
+      <section className="relative overflow-hidden bg-linear-to-br from-[#f7f5f0] to-[#ece8e0] min-h-screen">
         {/* Background Texture */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_#e8e4dc_0%,_#f5f3ef_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,#e8e4dc_0%,#f5f3ef_100%)]" />
         
         {/* Decorative Elements matching header */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -171,7 +171,7 @@ function Home() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.2, ease: "easeOut" }}
-              className="absolute -top-20 -left-10 right-0 h-[420px] lg:h-[520px]"
+              className="absolute -top-20 -left-10 right-0 h-105 lg:h-130"
             >
               <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1200 600" preserveAspectRatio="none">
                 <path
@@ -195,7 +195,7 @@ function Home() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="absolute right-8 top-24 z-10 hidden max-w-xs rounded-3xl bg-gradient-to-br from-[#141a47] to-[#1a2260] p-6 shadow-2xl backdrop-blur-sm lg:block"
+              className="absolute right-8 top-24 z-10 hidden max-w-xs rounded-3xl bg-linear-to-br from-[#141a47] to-[#1a2260] p-6 shadow-2xl backdrop-blur-sm lg:block"
             >
               <p className="text-lg font-medium leading-relaxed text-white/95">
                 We build software that scales
@@ -230,7 +230,7 @@ function Home() {
                   >
                     digital
                   </span>
-                  <div className="absolute -bottom-6 left-0 h-1 w-full bg-gradient-to-r from-[#36B7F0] to-transparent opacity-60" />
+                  <div className="absolute -bottom-6 left-0 h-1 w-full bg-linear-to-r from-[#36B7F0] to-transparent opacity-60" />
                 </motion.div>
                 
                 <motion.h1
