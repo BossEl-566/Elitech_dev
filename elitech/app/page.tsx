@@ -517,7 +517,7 @@ function Home() {
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
                 </div>
                 <div className="relative p-6">
                   <h3 className="text-2xl font-bold text-[#141a47]">{solution.title}</h3>
@@ -675,7 +675,7 @@ function Home() {
       </section>
 
       {/* PARTNERS SECTION */}
-      <section className="bg-gradient-to-br from-[#f7f5f0] to-[#ece8e0] py-16">
+      <section className="bg-linear-to-br from-[#f7f5f0] to-[#ece8e0] py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -831,7 +831,7 @@ function Home() {
                 </div>
                 <button
                   type="submit"
-                  className="group w-full rounded-full bg-gradient-to-r from-[#36B7F0] to-[#5CC6F3] px-8 py-4 font-bold text-[#141a47] transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                  className="group w-full rounded-full bg-linear-to-r from-[#36B7F0] to-[#5CC6F3] px-8 py-4 font-bold text-[#141a47] transition-all duration-300 hover:scale-105 hover:shadow-xl"
                 >
                   Send Message
                   <ArrowRight size={18} className="ml-2 inline transition-transform group-hover:translate-x-1" />
