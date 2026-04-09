@@ -275,7 +275,7 @@ function Home() {
                 </p>
               </div>
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0">
+                <div className="shrink-0">
                   <div className="text-6xl font-bold text-[#141a47] md:text-7xl" style={{ fontFamily: "'Times New Roman', Georgia, serif" }}>
                     24/7
                   </div>
@@ -303,7 +303,7 @@ function Home() {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 1.2 }}
-              className="group relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#141a47] via-[#1a2260] to-[#0f1440] shadow-2xl lg:p-0"
+              className="group relative overflow-hidden rounded-4xl bg-linear-to-br from-[#141a47] via-[#1a2260] to-[#0f1440] shadow-2xl lg:p-0"
             >
               <div className="relative h-64 w-full overflow-hidden lg:h-full">
                 <Image
@@ -312,7 +312,7 @@ function Home() {
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#141a47]/80 via-[#141a47]/40 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-[#141a47]/80 via-[#141a47]/40 to-transparent" />
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
                 <div className="mb-4 flex items-center gap-3">
@@ -328,7 +328,7 @@ function Home() {
                   <p className="text-sm text-white/80">Cutting-edge technology for modern business</p>
                 </div>
                 <div className="mt-6 flex items-center gap-4">
-                  <div className="h-12 w-12 rounded-full bg-gradient-to-br from-[#36B7F0] to-[#5CC6F3] p-0.5">
+                  <div className="h-12 w-12 rounded-full bg-linear-to-br from-[#36B7F0] to-[#5CC6F3] p-0.5">
                     <div className="h-full w-full rounded-full bg-[#141a47] flex items-center justify-center">
                       <span className="text-sm font-bold text-white">AI</span>
                     </div>
@@ -345,7 +345,7 @@ function Home() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 1.4 }}
-              className="relative rounded-[2rem] border border-gray-200 bg-white p-6 shadow-xl lg:p-8"
+              className="relative rounded-4xl border border-gray-200 bg-white p-6 shadow-xl lg:p-8"
             >
               <div className="absolute -top-3 left-8 h-6 w-16 rounded-t-full bg-[#f5f3ef]" />
               <div className="absolute -bottom-3 right-8 h-6 w-16 rounded-b-full bg-[#f5f3ef]" />
@@ -479,7 +479,7 @@ function Home() {
       </section>
 
       {/* SOLUTIONS SECTION */}
-      <section id="solutions" className="bg-gradient-to-br from-[#f7f5f0] to-[#ece8e0] py-24">
+      <section id="solutions" className="bg-linear-to-br from-[#f7f5f0] to-[#ece8e0] py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
