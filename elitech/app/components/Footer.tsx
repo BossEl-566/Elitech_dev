@@ -146,7 +146,7 @@ function Footer() {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
             <div className="lg:col-span-1">
               <Link href="/" className="mb-4 inline-block">
-                <div className="relative h-12 w-[180px] transition-transform hover:scale-105">
+                <div className="relative h-12 w-45 transition-transform hover:scale-105">
                   <Image
                     src={logo}
                     alt="ELITECH Logo"
@@ -322,7 +322,7 @@ function Footer() {
         className="fixed bottom-6 right-6 z-50 rounded-full bg-[#36B7F0] p-3 text-[#141a47] shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl lg:bottom-8 lg:right-8"
         aria-label="Back to top"
       >
-        <ArrowRight size={20} className="rotate-[-90deg]" />
+        <ArrowRight size={20} className="-rotate-90" />
       </button>
     </footer>
   );
