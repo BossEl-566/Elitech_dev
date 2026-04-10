@@ -153,7 +153,7 @@ function page() {
             </div>
           </div>
 
-          <div className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm">
+          <div className="rounded-4xl border border-slate-200 bg-white p-8 shadow-sm">
             <div className="grid gap-4">
               {highlights.map((item) => {
                 const Icon = item.icon;
