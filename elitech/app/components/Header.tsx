@@ -227,7 +227,7 @@ function Header() {
                   </Link>
 
                   {!item.isHome && item.sections && (
-                    <div className="invisible absolute left-1/2 top-full z-50 mt-4 w-[920px] -translate-x-1/2 rounded-3xl border border-slate-200 bg-white p-6 opacity-0 shadow-[0_20px_80px_rgba(0,0,0,0.25)] transition-all duration-300 group-hover:visible group-hover:opacity-100">
+                    <div className="invisible absolute left-1/2 top-full z-50 mt-4 w-230 -translate-x-1/2 rounded-3xl border border-slate-200 bg-white p-6 opacity-0 shadow-[0_20px_80px_rgba(0,0,0,0.25)] transition-all duration-300 group-hover:visible group-hover:opacity-100">
                       <div
                         className={`mb-5 rounded-2xl border px-4 py-3 ${
                           isActive
@@ -477,7 +477,7 @@ function Header() {
               <Link
                 href="/contact"
                 onClick={() => setMobileOpen(false)}
-                className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#36B7F0] to-[#5CC6F3] px-6 py-4 text-base font-bold text-[#141a47] transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
+                className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-linear-to-r from-[#36B7F0] to-[#5CC6F3] px-6 py-4 text-base font-bold text-[#141a47] transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
               >
                 Build
                 <Rocket size={18} />
