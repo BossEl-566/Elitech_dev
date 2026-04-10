@@ -193,7 +193,7 @@ function Header() {
           className="flex shrink-0 items-center transition duration-300 hover:scale-105"
           onClick={() => setMobileOpen(false)}
         >
-          <div className="relative h-10 w-[150px] sm:h-12 sm:w-[180px] md:h-14 md:w-[210px] lg:h-16 lg:w-[230px]">
+          <div className="relative h-10 w-37.5 sm:h-12 sm:w-45 md:h-14 md:w-52.5 lg:h-16 lg:w-57.5">
             <Image
               src={logo}
               alt="ELITECH Logo"
