@@ -249,7 +249,7 @@ function Footer() {
 
                 {isSubmitted && (
                   <p className="mt-2 animate-pulse text-sm text-[#36B7F0]">
-                    Thank you for subscribing! 🎉
+                    Thank you for subscribing! 
                   </p>
                 )}
               </div>
