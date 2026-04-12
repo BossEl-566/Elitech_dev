@@ -459,7 +459,7 @@ function Home() {
                   whileHover={{ y: -10 }}
                   className="group rounded-2xl border border-gray-200 bg-white p-8 shadow-lg transition-all duration-300 hover:shadow-2xl"
                 >
-                  <div className={`rounded-xl bg-gradient-to-br ${service.gradient} p-3 w-fit`}>
+                  <div className={`rounded-xl bg-linear-to-br ${service.gradient} p-3 w-fit`}>
                     <Icon size={32} className="text-[#36B7F0]" />
                   </div>
                   <h3 className="mt-6 text-xl font-bold text-[#141a47]">{service.title}</h3>
