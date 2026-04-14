@@ -165,38 +165,36 @@ function Header() {
   }, [pathname]);
 
   const navLinkBase =
-    "inline-flex items-center gap-1 rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300";
+    "inline-flex items-center gap-1.5 text-[15px] font-medium tracking-[0.01em] text-white/85 transition-all duration-300";
 
-  const navLinkActive =
-    "bg-white/15 text-[#36B7F0] shadow-[0_0_0_1px_rgba(54,183,240,0.35),0_0_20px_rgba(54,183,240,0.18)]";
-
-  const navLinkInactive =
-    "text-white/90 hover:bg-white/10 hover:text-[#36B7F0]";
+  const navLinkActive = "text-[#7ed3ff]";
+  const navLinkInactive = "hover:text-white";
 
   const mobileLinkBase =
-    "flex items-center gap-3 rounded-2xl border px-5 py-4 text-base font-semibold transition-all duration-300";
+    "flex items-center gap-3 rounded-2xl border px-5 py-4 text-base font-medium transition-all duration-300";
 
   const mobileActive =
-    "border-[#36B7F0]/50 bg-[#36B7F0]/15 text-[#36B7F0] shadow-[0_0_0_1px_rgba(54,183,240,0.25),0_0_20px_rgba(54,183,240,0.16)]";
+    "border-[#55c8ff]/40 bg-[#55c8ff]/10 text-[#7ed3ff] shadow-[0_0_0_1px_rgba(85,200,255,0.14)]";
 
   const mobileInactive =
-    "border-white/15 bg-white/5 text-white hover:bg-white/10 hover:text-[#36B7F0]";
+    "border-white/10 bg-white/5 text-white/90 hover:bg-white/10 hover:text-white";
 
   return (
-    <header
-      className="sticky top-0 z-50 w-full border-b border-white/10 shadow-2xl"
-      style={{ backgroundColor: "#141a47", fontFamily: "monospace" }}
-    >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:h-24 sm:px-6 lg:px-8">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full font-[var(--font-poppins)]">
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,14,35,0.82)_0%,rgba(3,14,35,0.56)_55%,rgba(3,14,35,0.12)_100%)]" />
+      <div className="absolute inset-0 backdrop-blur-[8px]" />
+      <div className="absolute inset-x-0 bottom-0 h-px bg-white/10" />
+
+      <div className="relative mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:h-24 lg:px-8">
         <Link
           href="/"
-          className="flex shrink-0 items-center transition duration-300 hover:scale-105"
+          className="flex shrink-0 items-center transition duration-300 hover:opacity-90"
           onClick={() => setMobileOpen(false)}
         >
-          <div className="relative h-10 w-37.5 sm:h-12 sm:w-45 md:h-14 md:w-52.5 lg:h-16 lg:w-57.5">
+          <div className="relative h-10 w-[132px] sm:h-12 sm:w-[150px] lg:h-14 lg:w-[170px]">
             <Image
               src={logo}
-              alt="ELITECH Logo"
+              alt="Elitech Logo"
               fill
               priority
               className="object-contain object-left"
@@ -204,8 +202,8 @@ function Header() {
           </div>
         </Link>
 
-        <div className="hidden items-center gap-6 lg:flex">
-          <nav className="flex items-center gap-2">
+        <div className="hidden items-center gap-8 lg:flex">
+          <nav className="flex items-center gap-8">
             {menuItems.map((item) => {
               const isActive = topLevelActiveMap[item.label];
 
@@ -215,36 +213,39 @@ function Header() {
                     href={item.href}
                     className={`${navLinkBase} ${isActive ? navLinkActive : navLinkInactive}`}
                   >
-                    {item.label}
+                    <span>{item.label}</span>
+
                     {!item.isHome && (
                       <ChevronDown
-                        size={14}
+                        size={15}
                         className={`transition-transform duration-300 group-hover:rotate-180 ${
-                          isActive ? "text-[#36B7F0]" : ""
+                          isActive ? "text-[#7ed3ff]" : "text-white/70"
                         }`}
                       />
                     )}
                   </Link>
 
                   {!item.isHome && item.sections && (
-                    <div className="invisible absolute left-1/2 top-full z-50 mt-4 w-230 -translate-x-1/2 rounded-3xl border border-slate-200 bg-white p-6 opacity-0 shadow-[0_20px_80px_rgba(0,0,0,0.25)] transition-all duration-300 group-hover:visible group-hover:opacity-100">
-                      <div
-                        className={`mb-5 rounded-2xl border px-4 py-3 ${
-                          isActive
-                            ? "border-[#36B7F0]/30 bg-[#36B7F0]/5"
-                            : "border-slate-100 bg-slate-50"
-                        }`}
-                      >
-                        <p className="text-sm font-semibold text-slate-900">
-                          {item.label}
-                        </p>
-                        <p className="text-xs text-slate-500">
-                          {isActive ? "Currently selected" : "Select a section below"}
-                        </p>
+                    <div className="invisible absolute left-1/2 top-full z-50 mt-6 w-[920px] -translate-x-1/2 rounded-[28px] border border-white/10 bg-[#081427]/95 p-6 opacity-0 shadow-[0_20px_70px_rgba(0,0,0,0.45)] backdrop-blur-xl transition-all duration-300 group-hover:visible group-hover:opacity-100">
+                      <div className="mb-5 flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3">
+                        <div>
+                          <p className="text-sm font-semibold text-white">{item.label}</p>
+                          <p className="text-xs text-white/55">
+                            Explore our {item.label.toLowerCase()} offerings
+                          </p>
+                        </div>
+
+                        <Link
+                          href={item.href}
+                          className="inline-flex items-center gap-2 text-sm font-medium text-[#7ed3ff] transition hover:text-white"
+                        >
+                          View All
+                          <ArrowRight size={14} />
+                        </Link>
                       </div>
 
                       <div
-                        className={`grid gap-6 ${
+                        className={`grid gap-5 ${
                           item.sections.length >= 3 ? "lg:grid-cols-3" : "lg:grid-cols-2"
                         }`}
                       >
@@ -254,17 +255,18 @@ function Header() {
                           return (
                             <div
                               key={section.title}
-                              className="rounded-2xl border border-slate-100 bg-slate-50 p-5 transition-all duration-300 hover:border-[#36B7F0]/20 hover:shadow-lg"
+                              className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition-all duration-300 hover:border-[#55c8ff]/25 hover:bg-white/[0.05]"
                             >
                               <div className="mb-4 flex items-start gap-3">
-                                <div className="rounded-xl bg-[#141a47] p-2">
-                                  <SectionIcon size={18} className="text-[#36B7F0]" />
+                                <div className="rounded-xl border border-[#55c8ff]/20 bg-[#55c8ff]/10 p-2.5">
+                                  <SectionIcon size={18} className="text-[#7ed3ff]" />
                                 </div>
+
                                 <div>
-                                  <h3 className="text-sm font-bold text-slate-900">
+                                  <h3 className="text-sm font-semibold text-white">
                                     {section.title}
                                   </h3>
-                                  <p className="mt-1 text-xs text-slate-500">
+                                  <p className="mt-1 text-xs leading-5 text-white/55">
                                     {section.description}
                                   </p>
                                 </div>
@@ -279,14 +281,14 @@ function Header() {
                                     <Link
                                       key={link.name}
                                       href={link.href}
-                                      className={`flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium transition-all duration-300 ${
+                                      className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition-all duration-300 ${
                                         isChildActive
-                                          ? "bg-[#36B7F0]/12 text-[#36B7F0] shadow-[inset_0_0_0_1px_rgba(54,183,240,0.22)]"
-                                          : "text-slate-700 hover:bg-[#36B7F0]/10 hover:text-[#36B7F0]"
+                                          ? "bg-[#55c8ff]/12 text-[#7ed3ff]"
+                                          : "text-white/78 hover:bg-white/[0.05] hover:text-white"
                                       }`}
                                     >
-                                      <LinkIcon size={15} />
-                                      {link.name}
+                                      <LinkIcon size={16} />
+                                      <span>{link.name}</span>
                                     </Link>
                                   );
                                 })}
@@ -294,18 +296,6 @@ function Header() {
                             </div>
                           );
                         })}
-                      </div>
-
-                      <div className="mt-6 border-t border-slate-100 pt-4">
-                        <Link
-                          href={item.href}
-                          className={`inline-flex items-center gap-2 text-sm font-semibold transition ${
-                            isActive ? "text-[#36B7F0]" : "text-[#141a47] hover:text-[#36B7F0]"
-                          }`}
-                        >
-                          View All {item.label}
-                          <ArrowRight size={14} />
-                        </Link>
                       </div>
                     </div>
                   )}
@@ -330,21 +320,17 @@ function Header() {
 
           <Link
             href="/contact"
-            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-linear-to-r from-[#36B7F0] to-[#5CC6F3] px-7 py-3 font-bold text-[#141a47] transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            className="inline-flex items-center gap-2 rounded-full border border-[#7ed3ff]/30 bg-[#6dcfff] px-6 py-3 text-sm font-semibold text-[#072038] transition-all duration-300 hover:scale-[1.02] hover:bg-[#8bd9ff]"
           >
-            <span className="relative z-10">Build</span>
-            <Rocket
-              size={16}
-              className="relative z-10 transition-transform group-hover:translate-x-1"
-            />
-            <div className="absolute inset-0 bg-linear-to-r from-[#5CC6F3] to-[#36B7F0] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+            Get Started
+            <Rocket size={16} />
           </Link>
         </div>
 
         <button
           type="button"
           onClick={() => setMobileOpen((prev) => !prev)}
-          className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 p-2.5 text-white transition-all duration-300 hover:bg-white/20 lg:hidden"
+          className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/10 p-2.5 text-white transition-all duration-300 hover:bg-white/15 lg:hidden"
           aria-label="Toggle menu"
         >
           {mobileOpen ? <X size={22} /> : <Menu size={22} />}
@@ -352,7 +338,7 @@ function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="fixed inset-x-0 top-20 z-50 max-h-[calc(100vh-5rem)] overflow-y-auto border-t border-white/10 bg-[#141a47] lg:hidden sm:top-24 sm:max-h-[calc(100vh-6rem)]">
+        <div className="absolute inset-x-0 top-full z-50 border-t border-white/10 bg-[#071325]/95 backdrop-blur-xl lg:hidden">
           <div className="mx-auto max-w-7xl px-4 py-5 sm:px-6">
             <nav className="flex flex-col gap-3">
               <Link
@@ -360,7 +346,7 @@ function Header() {
                 onClick={() => setMobileOpen(false)}
                 className={`${mobileLinkBase} ${pathname === "/" ? mobileActive : mobileInactive}`}
               >
-                <Home size={20} className="text-[#36B7F0]" />
+                <Home size={20} className="text-[#7ed3ff]" />
                 Home
               </Link>
 
@@ -375,24 +361,22 @@ function Header() {
                       key={item.label}
                       className={`overflow-hidden rounded-2xl border transition-all duration-300 ${
                         isTopActive
-                          ? "border-[#36B7F0]/40 bg-[#36B7F0]/10 shadow-[0_0_0_1px_rgba(54,183,240,0.18),0_0_20px_rgba(54,183,240,0.12)]"
-                          : "border-white/15 bg-white/5"
+                          ? "border-[#55c8ff]/30 bg-[#55c8ff]/10"
+                          : "border-white/10 bg-white/[0.04]"
                       }`}
                     >
                       <button
                         type="button"
                         onClick={() => toggleMobileDropdown(item.label)}
-                        className={`flex w-full items-center justify-between px-5 py-4 text-left text-base font-semibold transition ${
-                          isTopActive
-                            ? "text-[#36B7F0]"
-                            : "text-white hover:bg-white/10"
+                        className={`flex w-full items-center justify-between px-5 py-4 text-left text-base font-medium transition ${
+                          isTopActive ? "text-[#7ed3ff]" : "text-white"
                         }`}
                       >
                         <span>{item.label}</span>
                         <ChevronDown
                           size={20}
                           className={`transition-all duration-300 ${
-                            isOpen ? "rotate-180 text-[#36B7F0]" : ""
+                            isOpen ? "rotate-180 text-[#7ed3ff]" : "text-white/70"
                           }`}
                         />
                       </button>
@@ -402,10 +386,10 @@ function Header() {
                           <Link
                             href={item.href}
                             onClick={() => setMobileOpen(false)}
-                            className={`block rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-300 ${
+                            className={`block rounded-xl px-4 py-3 text-sm font-medium transition-all duration-300 ${
                               isPathActive(item.href)
-                                ? "bg-[#36B7F0]/15 text-[#36B7F0]"
-                                : "text-white/90 hover:bg-white/10 hover:text-[#36B7F0]"
+                                ? "bg-[#55c8ff]/12 text-[#7ed3ff]"
+                                : "text-white/85 hover:bg-white/10 hover:text-white"
                             }`}
                           >
                             View All {item.label}
@@ -417,12 +401,12 @@ function Header() {
                             return (
                               <div key={section.title}>
                                 <div className="mb-3 flex items-center gap-2">
-                                  <SectionIcon size={18} className="text-[#36B7F0]" />
+                                  <SectionIcon size={18} className="text-[#7ed3ff]" />
                                   <div>
-                                    <h3 className="text-sm font-bold text-[#36B7F0]">
+                                    <h3 className="text-sm font-semibold text-[#7ed3ff]">
                                       {section.title}
                                     </h3>
-                                    <p className="text-xs text-white/60">
+                                    <p className="text-xs text-white/55">
                                       {section.description}
                                     </p>
                                   </div>
@@ -438,10 +422,10 @@ function Header() {
                                         key={link.name}
                                         href={link.href}
                                         onClick={() => setMobileOpen(false)}
-                                        className={`flex items-center gap-3 rounded-xl px-4 py-2.5 text-sm font-medium transition-all duration-300 ${
+                                        className={`flex items-center gap-3 rounded-xl px-4 py-2.5 text-sm transition-all duration-300 ${
                                           isChildActive
-                                            ? "bg-[#36B7F0]/15 text-[#36B7F0] shadow-[inset_0_0_0_1px_rgba(54,183,240,0.2)]"
-                                            : "text-white/85 hover:bg-white/10 hover:text-[#36B7F0]"
+                                            ? "bg-[#55c8ff]/12 text-[#7ed3ff]"
+                                            : "text-white/80 hover:bg-white/10 hover:text-white"
                                         }`}
                                       >
                                         <LinkIcon size={16} />
@@ -477,9 +461,9 @@ function Header() {
               <Link
                 href="/contact"
                 onClick={() => setMobileOpen(false)}
-                className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-linear-to-r from-[#36B7F0] to-[#5CC6F3] px-6 py-4 text-base font-bold text-[#141a47] transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
+                className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[#6dcfff] px-6 py-4 text-base font-semibold text-[#072038] transition-all duration-300 hover:bg-[#8bd9ff]"
               >
-                Build
+                Get Started
                 <Rocket size={18} />
               </Link>
             </nav>
