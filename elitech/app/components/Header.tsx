@@ -32,7 +32,7 @@ import {
   CreditCard,
   Globe,
 } from "lucide-react";
-import logo from "../assets/elitech-logo.png";
+import logo from "../assets/elitech-logo4.png";
 
 const menuItems = [
   {
