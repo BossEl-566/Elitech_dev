@@ -165,23 +165,27 @@ function Header() {
   }, [pathname]);
 
   const navLinkBase =
-    "inline-flex items-center gap-1.5 text-[15px] font-medium tracking-[0.01em] text-white/85 transition-all duration-300";
+    "inline-flex items-center gap-1.5 py-2 text-[15px] font-medium tracking-[0.01em] transition-all duration-300";
 
-  const navLinkActive = "text-[#7ed3ff]";
-  const navLinkInactive = "hover:text-white";
+  const navLinkActive =
+    "text-[#8ED8FF] drop-shadow-[0_0_10px_rgba(142,216,255,0.35)]";
+
+  const navLinkInactive = "text-white/90 hover:text-white";
 
   const mobileLinkBase =
     "flex items-center gap-3 rounded-2xl border px-5 py-4 text-base font-medium transition-all duration-300";
 
   const mobileActive =
-    "border-[#55c8ff]/40 bg-[#55c8ff]/10 text-[#7ed3ff] shadow-[0_0_0_1px_rgba(85,200,255,0.14)]";
+    "border-[#55c8ff]/40 bg-[#55c8ff]/10 text-[#8ED8FF] shadow-[0_0_0_1px_rgba(85,200,255,0.14)]";
 
   const mobileInactive =
     "border-white/10 bg-white/5 text-white/90 hover:bg-white/10 hover:text-white";
 
+  const allDesktopItems = [...menuItems, ...simpleLinks];
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full font-[var(--font-poppins)]">
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,14,35,0.82)_0%,rgba(3,14,35,0.56)_55%,rgba(3,14,35,0.12)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,14,35,0.88)_0%,rgba(3,14,35,0.64)_58%,rgba(3,14,35,0.18)_100%)]" />
       <div className="absolute inset-0 backdrop-blur-[8px]" />
       <div className="absolute inset-x-0 bottom-0 h-px bg-white/10" />
 
@@ -203,29 +207,43 @@ function Header() {
         </Link>
 
         <div className="hidden items-center gap-8 lg:flex">
-          <nav className="flex items-center gap-8">
-            {menuItems.map((item) => {
-              const isActive = topLevelActiveMap[item.label];
+          <nav className="flex items-center">
+            {allDesktopItems.map((item, index) => {
+              const isMenuItem = "isHome" in item || "sections" in item;
+              const isHomeItem = "isHome" in item && item.isHome;
+              const hasDropdown = "sections" in item && !!item.sections;
+              const isActive = isMenuItem
+                ? topLevelActiveMap[item.label] ?? isPathActive(item.href)
+                : isPathActive(item.href);
 
               return (
-                <div key={item.label} className="group relative">
+                <div key={item.label} className="group relative flex items-center">
                   <Link
                     href={item.href}
                     className={`${navLinkBase} ${isActive ? navLinkActive : navLinkInactive}`}
                   >
-                    <span>{item.label}</span>
+                    <span className="relative">
+                      {item.label}
+                      {isActive && (
+                        <span className="absolute -bottom-2 left-1/2 h-[2px] w-6 -translate-x-1/2 rounded-full bg-[#7ED3FF]" />
+                      )}
+                    </span>
 
-                    {!item.isHome && (
+                    {!isHomeItem && hasDropdown && (
                       <ChevronDown
                         size={15}
                         className={`transition-transform duration-300 group-hover:rotate-180 ${
-                          isActive ? "text-[#7ed3ff]" : "text-white/70"
+                          isActive ? "text-[#8ED8FF]" : "text-white/70"
                         }`}
                       />
                     )}
                   </Link>
 
-                  {!item.isHome && item.sections && (
+                  {index !== allDesktopItems.length - 1 && (
+                    <span className="mx-5 h-4 w-px bg-white/20" />
+                  )}
+
+                  {!isHomeItem && hasDropdown && (
                     <div className="invisible absolute left-1/2 top-full z-50 mt-6 w-[920px] -translate-x-1/2 rounded-[28px] border border-white/10 bg-[#081427]/95 p-6 opacity-0 shadow-[0_20px_70px_rgba(0,0,0,0.45)] backdrop-blur-xl transition-all duration-300 group-hover:visible group-hover:opacity-100">
                       <div className="mb-5 flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3">
                         <div>
@@ -237,7 +255,7 @@ function Header() {
 
                         <Link
                           href={item.href}
-                          className="inline-flex items-center gap-2 text-sm font-medium text-[#7ed3ff] transition hover:text-white"
+                          className="inline-flex items-center gap-2 text-sm font-medium text-[#8ED8FF] transition hover:text-white"
                         >
                           View All
                           <ArrowRight size={14} />
@@ -259,7 +277,7 @@ function Header() {
                             >
                               <div className="mb-4 flex items-start gap-3">
                                 <div className="rounded-xl border border-[#55c8ff]/20 bg-[#55c8ff]/10 p-2.5">
-                                  <SectionIcon size={18} className="text-[#7ed3ff]" />
+                                  <SectionIcon size={18} className="text-[#8ED8FF]" />
                                 </div>
 
                                 <div>
@@ -283,7 +301,7 @@ function Header() {
                                       href={link.href}
                                       className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition-all duration-300 ${
                                         isChildActive
-                                          ? "bg-[#55c8ff]/12 text-[#7ed3ff]"
+                                          ? "bg-[#55c8ff]/12 text-[#8ED8FF]"
                                           : "text-white/78 hover:bg-white/[0.05] hover:text-white"
                                       }`}
                                     >
@@ -302,25 +320,11 @@ function Header() {
                 </div>
               );
             })}
-
-            {simpleLinks.map((link) => {
-              const isActive = isPathActive(link.href);
-
-              return (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className={`${navLinkBase} ${isActive ? navLinkActive : navLinkInactive}`}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
           </nav>
 
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 rounded-full border border-[#7ed3ff]/30 bg-[#6dcfff] px-6 py-3 text-sm font-semibold text-[#072038] transition-all duration-300 hover:scale-[1.02] hover:bg-[#8bd9ff]"
+            className="inline-flex items-center gap-2 rounded-full border border-[#7ed3ff]/35 bg-[#53BFEF] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:bg-[#69CAF3] hover:shadow-[0_10px_30px_rgba(83,191,239,0.25)]"
           >
             Get Started
             <Rocket size={16} />
@@ -346,7 +350,7 @@ function Header() {
                 onClick={() => setMobileOpen(false)}
                 className={`${mobileLinkBase} ${pathname === "/" ? mobileActive : mobileInactive}`}
               >
-                <Home size={20} className="text-[#7ed3ff]" />
+                <Home size={20} className="text-[#8ED8FF]" />
                 Home
               </Link>
 
@@ -369,14 +373,14 @@ function Header() {
                         type="button"
                         onClick={() => toggleMobileDropdown(item.label)}
                         className={`flex w-full items-center justify-between px-5 py-4 text-left text-base font-medium transition ${
-                          isTopActive ? "text-[#7ed3ff]" : "text-white"
+                          isTopActive ? "text-[#8ED8FF]" : "text-white"
                         }`}
                       >
                         <span>{item.label}</span>
                         <ChevronDown
                           size={20}
                           className={`transition-all duration-300 ${
-                            isOpen ? "rotate-180 text-[#7ed3ff]" : "text-white/70"
+                            isOpen ? "rotate-180 text-[#8ED8FF]" : "text-white/70"
                           }`}
                         />
                       </button>
@@ -388,7 +392,7 @@ function Header() {
                             onClick={() => setMobileOpen(false)}
                             className={`block rounded-xl px-4 py-3 text-sm font-medium transition-all duration-300 ${
                               isPathActive(item.href)
-                                ? "bg-[#55c8ff]/12 text-[#7ed3ff]"
+                                ? "bg-[#55c8ff]/12 text-[#8ED8FF]"
                                 : "text-white/85 hover:bg-white/10 hover:text-white"
                             }`}
                           >
@@ -401,9 +405,9 @@ function Header() {
                             return (
                               <div key={section.title}>
                                 <div className="mb-3 flex items-center gap-2">
-                                  <SectionIcon size={18} className="text-[#7ed3ff]" />
+                                  <SectionIcon size={18} className="text-[#8ED8FF]" />
                                   <div>
-                                    <h3 className="text-sm font-semibold text-[#7ed3ff]">
+                                    <h3 className="text-sm font-semibold text-[#8ED8FF]">
                                       {section.title}
                                     </h3>
                                     <p className="text-xs text-white/55">
@@ -424,7 +428,7 @@ function Header() {
                                         onClick={() => setMobileOpen(false)}
                                         className={`flex items-center gap-3 rounded-xl px-4 py-2.5 text-sm transition-all duration-300 ${
                                           isChildActive
-                                            ? "bg-[#55c8ff]/12 text-[#7ed3ff]"
+                                            ? "bg-[#55c8ff]/12 text-[#8ED8FF]"
                                             : "text-white/80 hover:bg-white/10 hover:text-white"
                                         }`}
                                       >
@@ -461,7 +465,7 @@ function Header() {
               <Link
                 href="/contact"
                 onClick={() => setMobileOpen(false)}
-                className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[#6dcfff] px-6 py-4 text-base font-semibold text-[#072038] transition-all duration-300 hover:bg-[#8bd9ff]"
+                className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[#53BFEF] px-6 py-4 text-base font-semibold text-white transition-all duration-300 hover:bg-[#69CAF3]"
               >
                 Get Started
                 <Rocket size={18} />
