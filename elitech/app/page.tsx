@@ -154,149 +154,231 @@ function Home() {
     <div className="relative overflow-hidden bg-[#f7f5f0]" style={{ fontFamily: "'Droid Sans Mono', 'Courier New', monospace" }}>
       
       {/* HERO SECTION */}
-      <section className="relative min-h-screen overflow-hidden bg-[#07182d] font-['Poppins',sans-serif]">
-        {/* Background image */}
-        <div className="absolute inset-0">
-          <Image
-            src={heroBg}
-            alt="Corporate meeting background"
-            fill
-            priority
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-[#061a31]/78" />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,14,35,0.88)_0%,rgba(3,14,35,0.62)_35%,rgba(3,14,35,0.35)_100%)]" />
+<section className="relative min-h-screen overflow-hidden bg-[#07182d] font-['Poppins',sans-serif]">
+  {/* Background image */}
+  <div className="absolute inset-0">
+    <Image
+      src={heroBg}
+      alt="Corporate meeting background"
+      fill
+      priority
+      className="object-cover"
+    />
+    <div className="absolute inset-0 bg-[#061a31]/78" />
+    <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,14,35,0.88)_0%,rgba(3,14,35,0.62)_35%,rgba(3,14,35,0.35)_100%)]" />
+  </div>
+
+  {/* soft blue mood */}
+  <div className="absolute inset-0">
+    <div className="absolute left-[-120px] top-[180px] h-[380px] w-[380px] rounded-full bg-[#1d8fca]/10 blur-3xl" />
+    <div className="absolute right-[8%] top-[20%] h-[280px] w-[280px] rounded-full bg-[#123d75]/18 blur-3xl" />
+  </div>
+
+  {/* content */}
+  <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-4 pb-16 pt-28 sm:px-6 lg:px-8 lg:pt-32">
+    <div className="grid w-full items-center gap-10 lg:grid-cols-[120px_minmax(0,720px)_1fr]">
+      
+      {/* Left side rail */}
+      <motion.div 
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="hidden h-full flex-col items-center justify-between py-10 lg:flex"
+      >
+        <div className="flex flex-col items-center">
         </div>
 
-        {/* soft blue mood */}
-        <div className="absolute inset-0">
-          <div className="absolute left-[-120px] top-[180px] h-[380px] w-[380px] rounded-full bg-[#1d8fca]/10 blur-3xl" />
-          <div className="absolute right-[8%] top-[20%] h-[280px] w-[280px] rounded-full bg-[#123d75]/18 blur-3xl" />
+        <div className="flex flex-col items-center gap-5">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="flex items-center gap-3"
+          >
+            <span className="text-[11px] text-white/80 [writing-mode:vertical-rl]">
+              Follow Us
+            </span>
+            <span className="h-20 w-px bg-white/30" />
+          </motion.div>
+
+          <div className="flex flex-col gap-3">
+            {[
+              { icon: FaFacebookF, href: "#", label: "Facebook" },
+              { icon: FaInstagram, href: "#", label: "Instagram" },
+              { icon: FaXTwitter, href: "#", label: "X" },
+            ].map((item, index) => {
+              const Icon = item.icon;
+
+              return (
+                <motion.div
+                  key={item.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.1, rotate: 12 }}
+                >
+                  <Link
+                    href={item.href}
+                    aria-label={item.label}
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-white/45 text-white/90 transition-all duration-300 hover:border-[#7fd7ff] hover:text-[#7fd7ff]"
+                  >
+                    <Icon className="text-[12px]" />
+                  </Link>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
+      </motion.div>
 
-        {/* content */}
-        <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-4 pb-16 pt-28 sm:px-6 lg:px-8 lg:pt-32">
-          <div className="grid w-full items-center gap-10 lg:grid-cols-[120px_minmax(0,720px)_1fr]">
-            
-            {/* Left side rail */}
-            <div className="hidden h-full flex-col items-center justify-between py-10 lg:flex">
-              <div className="flex flex-col items-center">
-                <span className="rotate-180 text-[10px] font-medium tracking-[0.18em] text-[#86d8ff] [writing-mode:vertical-rl]">
-                  ELITECH DEV
-                </span>
-              </div>
+      {/* Main hero copy */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="relative max-w-[760px]"
+      >
+        <div className="relative inline-block">
+          {/* frame */}
+          <div className="pointer-events-none absolute left-0 top-0 h-[280px] w-[220px] border-l-4 border-t-4 border-[#5ecfff] sm:h-[320px] sm:w-[260px]" />
+          <div className="pointer-events-none absolute bottom-[18px] left-0 h-[100px] w-[220px] border-b-4 border-r-4 border-[#5ecfff] sm:w-[260px]" />
 
-              <div className="flex flex-col items-center gap-5">
-                <div className="flex items-center gap-3">
-                  <span className="text-[11px] text-white/80 [writing-mode:vertical-rl]">
-                    Follow Us
-                  </span>
-                  <span className="h-20 w-px bg-white/30" />
-                </div>
-
-                <div className="flex flex-col gap-3">
-        {[
-          { icon: FaFacebookF, href: "#", label: "Facebook" },
-          { icon: FaInstagram, href: "#", label: "Instagram" },
-          { icon: FaXTwitter, href: "#", label: "X" },
-        ].map((item) => {
-          const Icon = item.icon;
-
-          return (
-            <Link
-              key={item.label}
-              href={item.href}
-              aria-label={item.label}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/45 text-white/90 transition hover:border-[#7fd7ff] hover:text-[#7fd7ff]"
+          {/* main content */}
+          <div className="relative z-10 pl-8 pt-12 sm:pl-12 sm:pt-14">
+            <motion.h1 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="max-w-[700px] text-[2.8rem] font-bold leading-[0.9] tracking-[-0.03em] text-white sm:text-[3.8rem] lg:text-[4.6rem]"
             >
-              <Icon className="text-[12px]" />
-            </Link>
-          );
-        })}
+              WE
+              <br />
+              IMPLEMENT
+            </motion.h1>
+
+            <motion.h2 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1, duration: 0.6 }}
+              viewport={{ once: true }}
+              className="mt-4 text-[1.6rem] font-bold leading-none tracking-[-0.02em] text-white sm:text-[2.2rem] lg:text-[2.8rem]"
+            >
+              CORPORATE SOFTWARE
+            </motion.h2>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              viewport={{ once: true }}
+              className="mt-6 flex max-w-[560px] items-start gap-4"
+            >
+              <div className="mt-1 hidden h-14 w-[3px] bg-[#5ecfff] sm:block" />
+              <p className="max-w-[430px] text-[13px] leading-6 text-white/82 sm:text-[14px]">
+                We implement the corporate performance software
+                {" "}
+                <span className="font-medium text-white">“Elitech Dev”</span>
+                {" "}
+                for consolidation, planning and reporting purposes.
+              </p>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.02 }}
+              className="mt-16"
+            >
+              <Link
+                href="/contact"
+                className="group inline-flex items-center gap-3 rounded-full bg-[#267A9E] px-5 py-2.5 text-[13px] font-semibold text-white shadow-[0_10px_30px_rgba(105,201,243,0.22)] transition-all duration-300 hover:bg-[#034663]"
+              >
+                Get Started Now
+                <motion.span 
+                  whileHover={{ x: 4 }}
+                  className="flex h-7 w-7 items-center justify-center rounded-full bg-white/14 transition-all duration-300"
+                >
+                  <ArrowRight size={14} />
+                </motion.span>
+              </Link>
+            </motion.div>
+          </div>
+
+          {/* vertical text */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            viewport={{ once: true }}
+            className="absolute left-[-26px] top-[68px] hidden lg:block"
+          >
+            <span className="text-[10px] font-medium tracking-[0.2em] text-[#86d8ff] [writing-mode:vertical-rl]">
+              ELITECH DEV
+            </span>
+          </motion.div>
+        </div>
+      </motion.div>
+
+      {/* Right decoration */}
+      <motion.div 
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="hidden justify-end lg:flex"
+      >
+        <div className="mr-6 flex flex-col items-center">
+          <motion.div 
+            whileHover={{ scale: 1.1 }}
+            className="mb-4 flex h-4 w-4 items-center justify-center rounded-full border border-white/70"
+          >
+            <div className="h-1 w-1 rounded-full bg-white" />
+          </motion.div>
+
+          <div className="h-20 w-px bg-white/35" />
+
+          <div className="mt-3 flex flex-col gap-2">
+            <motion.span 
+              whileHover={{ scale: 1.5 }}
+              className="h-1.5 w-1.5 rounded-full bg-white/95" 
+            />
+            <motion.span 
+              whileHover={{ scale: 1.5 }}
+              className="h-1.5 w-1.5 rounded-full bg-white/60" 
+            />
+            <motion.span 
+              whileHover={{ scale: 1.5 }}
+              className="h-1.5 w-1.5 rounded-full bg-white/35" 
+            />
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  </div>
+
+  {/* bottom center scroll/mouse hint */}
+  <motion.div 
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.4, duration: 0.6 }}
+    viewport={{ once: true }}
+    whileHover={{ scale: 1.1 }}
+    className="absolute bottom-[-26px] left-1/2 z-20 -translate-x-1/2"
+  >
+    <div className="flex h-12 w-12 items-center justify-center rounded-full border-[5px] border-white bg-[#f6f6f6] shadow-lg">
+      <div className="flex h-7 w-7 items-start justify-center rounded-full border border-[#c9c9c9] bg-white pt-1">
+        <div className="h-1.5 w-0.5 rounded-full bg-[#9a9a9a]" />
       </div>
-              </div>
-            </div>
-
-            {/* Main hero copy */}
-            <div className="relative max-w-[760px]">
-              <div className="relative inline-block">
-                {/* frame */}
-                <div className="pointer-events-none absolute left-0 top-0 h-[280px] w-[220px] border-l-4 border-t-4 border-[#5ecfff] sm:h-[320px] sm:w-[260px]" />
-                <div className="pointer-events-none absolute bottom-[18px] left-0 h-[100px] w-[220px] border-b-4 border-r-4 border-[#5ecfff] sm:w-[260px]" />
-
-                {/* main content */}
-                <div className="relative z-10 pl-8 pt-12 sm:pl-12 sm:pt-14">
-                  <h1 className="max-w-[700px] text-[2.8rem] font-bold leading-[0.9] tracking-[-0.03em] text-white sm:text-[3.8rem] lg:text-[4.6rem]">
-                    WE
-                    <br />
-                    IMPLEMENT
-                  </h1>
-
-                  <h2 className="mt-4 text-[1.6rem] font-bold leading-none tracking-[-0.02em] text-white sm:text-[2.2rem] lg:text-[2.8rem]">
-                    CORPORATE SOFTWARE
-                  </h2>
-
-                  <div className="mt-6 flex max-w-[560px] items-start gap-4">
-                    <div className="mt-1 hidden h-14 w-[3px] bg-[#5ecfff] sm:block" />
-                    <p className="max-w-[430px] text-[13px] leading-6 text-white/82 sm:text-[14px]">
-                      We implement the corporate performance software
-                      {" "}
-                      <span className="font-medium text-white">“Elitech Dev”</span>
-                      {" "}
-                      for consolidation, planning and reporting purposes.
-                    </p>
-                  </div>
-
-                  <div className="mt-6">
-                    <Link
-                      href="/contact"
-                      className="group inline-flex items-center gap-3 rounded-full bg-[#267A9E] px-5 py-2.5 text-[13px] font-semibold text-white shadow-[0_10px_30px_rgba(105,201,243,0.22)] transition-all duration-300 hover:scale-[1.02] hover:bg-[#034663]"
-                    >
-                      Get Started Now
-                      <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/14 transition group-hover:translate-x-0.5">
-                        <ArrowRight size={14} />
-                      </span>
-                    </Link>
-                  </div>
-                </div>
-
-                {/* vertical text */}
-                <div className="absolute left-[-26px] top-[68px] hidden lg:block">
-                  <span className="text-[10px] font-medium tracking-[0.2em] text-[#86d8ff] [writing-mode:vertical-rl]">
-                    ELITECH DEV
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right decoration */}
-            <div className="hidden justify-end lg:flex">
-              <div className="mr-6 flex flex-col items-center">
-                <div className="mb-4 flex h-4 w-4 items-center justify-center rounded-full border border-white/70">
-                  <div className="h-1 w-1 rounded-full bg-white" />
-                </div>
-
-                <div className="h-20 w-px bg-white/35" />
-
-                <div className="mt-3 flex flex-col gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-white/95" />
-                  <span className="h-1.5 w-1.5 rounded-full bg-white/60" />
-                  <span className="h-1.5 w-1.5 rounded-full bg-white/35" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* bottom center scroll/mouse hint */}
-        <div className="absolute bottom-[-26px] left-1/2 z-20 -translate-x-1/2">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full border-[5px] border-white bg-[#f6f6f6] shadow-lg">
-            <div className="flex h-7 w-7 items-start justify-center rounded-full border border-[#c9c9c9] bg-white pt-1">
-              <div className="h-1.5 w-0.5 rounded-full bg-[#9a9a9a]" />
-            </div>
-          </div>
-        </div>
-      </section>
+    </div>
+  </motion.div>
+</section>
 
       {/* SERVICES SECTION */}
       <section id="services" className="bg-white py-24">
