@@ -184,7 +184,7 @@ function Header() {
   const allDesktopItems = [...menuItems, ...simpleLinks];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full font-[var(--font-poppins)]">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full font-['Poppins',sans-serif]">
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,14,35,0.88)_0%,rgba(3,14,35,0.64)_58%,rgba(3,14,35,0.18)_100%)]" />
       <div className="absolute inset-0 backdrop-blur-[8px]" />
       <div className="absolute inset-x-0 bottom-0 h-px bg-white/10" />
