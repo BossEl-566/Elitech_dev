@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import {
   FaFacebookF,
-  FaTwitter,
+  FaXTwitter,
   FaLinkedinIn,
   FaInstagram,
   FaYoutube,
@@ -74,7 +74,7 @@ const footerSections = [
 
 const socialLinks = [
   { icon: FaFacebookF, href: "#", label: "Facebook", color: "#1877f2" },
-  { icon: FaTwitter, href: "#", label: "Twitter", color: "#000000" },
+  { icon: FaXTwitter, href: "#", label: "Twitter", color: "#000000" },
   { icon: FaLinkedinIn, href: "#", label: "LinkedIn", color: "#0a66c2" },
   { icon: FaInstagram, href: "#", label: "Instagram", color: "#e4405f" },
   { icon: FaYoutube, href: "#", label: "YouTube", color: "#ff0000" },
