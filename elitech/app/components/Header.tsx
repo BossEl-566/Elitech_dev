@@ -184,10 +184,11 @@ function Header() {
   const allDesktopItems = [...menuItems, ...simpleLinks];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full font-['Poppins',sans-serif]">
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,14,35,0.88)_0%,rgba(3,14,35,0.64)_58%,rgba(3,14,35,0.18)_100%)]" />
-      <div className="absolute inset-0 backdrop-blur-[8px]" />
-      <div className="absolute inset-x-0 bottom-0 h-px bg-white/10" />
+    <header className="absolute top-0 left-0 right-0 z-50 w-full font-['Poppins',sans-serif]">
+      {/* Completely transparent background - no gradients, no blur, no lines */}
+      <div className="absolute inset-0 bg-transparent" />
+      
+      {/* Removed: gradient background, backdrop blur, and bottom border line */}
 
       <div className="relative mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:h-24 lg:px-8">
         <Link
@@ -342,7 +343,8 @@ function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="absolute inset-x-0 top-full z-50 border-t border-white/10 bg-[#071325]/95 backdrop-blur-xl lg:hidden">
+        <div className="absolute inset-x-0 top-full z-50 bg-[#071325]/95 backdrop-blur-xl lg:hidden">
+          {/* Removed: border-t border-white/10 */}
           <div className="mx-auto max-w-7xl px-4 py-5 sm:px-6">
             <nav className="flex flex-col gap-3">
               <Link
