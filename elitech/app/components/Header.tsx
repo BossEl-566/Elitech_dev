@@ -324,7 +324,7 @@ function Header() {
 
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 rounded-full border border-[#7ed3ff]/35 bg-[#53BFEF] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:bg-[#69CAF3] hover:shadow-[0_10px_30px_rgba(83,191,239,0.25)]"
+            className="inline-flex items-center gap-2 rounded-full border border-[#7ed3ff]/35 bg-[#267A9E] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:bg-[#034663] hover:shadow-[0_10px_30px_rgba(83,191,239,0.25)]"
           >
             Get Started
             <Rocket size={16} />
@@ -465,7 +465,7 @@ function Header() {
               <Link
                 href="/contact"
                 onClick={() => setMobileOpen(false)}
-                className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[#53BFEF] px-6 py-4 text-base font-semibold text-white transition-all duration-300 hover:bg-[#69CAF3]"
+                className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[#267A9E] px-6 py-4 text-base font-semibold text-white transition-all duration-300 hover:bg-[#034663]"
               >
                 Get Started
                 <Rocket size={18} />
