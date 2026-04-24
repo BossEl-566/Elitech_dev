@@ -244,8 +244,8 @@ function Home() {
       >
         <div className="relative inline-block">
           {/* frame */}
-          <div className="pointer-events-none absolute left-0 top-0 h-70 w-55 border-l-4 border-t-4 border-[#5ecfff] sm:h-[320px] sm:w-[260px]" />
-          <div className="pointer-events-none absolute bottom-4.5 left-0 h-25 w-55 border-b-4 border-r-4 border-[#5ecfff] sm:w-[260px]" />
+          <div className="pointer-events-none absolute left-0 top-0 h-70 w-55 border-l-4 border-t-4 border-[#5ecfff] sm:h-80 sm:w-65" />
+          <div className="pointer-events-none absolute bottom-4.5 left-0 h-25 w-55 border-b-4 border-r-4 border-[#5ecfff] sm:w-65" />
 
           {/* main content */}
           <div className="relative z-10 pl-8 pt-12 sm:pl-12 sm:pt-14">
@@ -254,7 +254,7 @@ function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="max-w-[700px] text-[2.8rem] font-bold leading-[0.9] tracking-[-0.03em] text-white sm:text-[3.8rem] lg:text-[4.6rem]"
+              className="max-w-175 text-[2.8rem] font-bold leading-[0.9] tracking-[-0.03em] text-white sm:text-[3.8rem] lg:text-[4.6rem]"
             >
               WE
               <br />
