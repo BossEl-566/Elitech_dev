@@ -170,8 +170,8 @@ function Home() {
 
   {/* soft blue mood */}
   <div className="absolute inset-0">
-    <div className="absolute left-[-120px] top-[180px] h-[380px] w-[380px] rounded-full bg-[#1d8fca]/10 blur-3xl" />
-    <div className="absolute right-[8%] top-[20%] h-[280px] w-[280px] rounded-full bg-[#123d75]/18 blur-3xl" />
+    <div className="absolute -left-30 top-45 h-95 w-95 rounded-full bg-[#1d8fca]/10 blur-3xl" />
+    <div className="absolute right-[8%] top-[20%] h-70 w-70 rounded-full bg-[#123d75]/18 blur-3xl" />
   </div>
 
   {/* content */}
@@ -240,7 +240,7 @@ function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="relative max-w-[760px]"
+        className="relative max-w-190"
       >
         <div className="relative inline-block">
           {/* frame */}
