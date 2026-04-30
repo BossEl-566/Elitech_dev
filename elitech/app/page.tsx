@@ -1116,78 +1116,189 @@ function Home() {
       </section>
 
       {/* PROJECTS SECTION */}
-      <section id="projects" className="bg-white py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section
+        id="projects"
+        className="relative overflow-hidden bg-[#061524] py-24 font-['Poppins',sans-serif]"
+      >
+        {/* background texture */}
+        <div className="absolute inset-0">
+          <Image
+            src={heroBg}
+            alt="Projects background"
+            fill
+            className="object-cover opacity-[0.08]"
+          />
+          <div className="absolute inset-0 bg-[#061524]/94" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(54,183,240,0.16),transparent_38%)]" />
+        </div>
+
+        {/* decorative glow */}
+        <div className="pointer-events-none absolute -left-24 top-20 h-96 w-96 rounded-full bg-[#36B7F0]/10 blur-3xl" />
+        <div className="pointer-events-none absolute -right-24 bottom-20 h-96 w-96 rounded-full bg-[#267A9E]/12 blur-3xl" />
+
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* heading */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="mb-16 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end"
           >
-            <span className="inline-flex items-center gap-2 rounded-full bg-[#141a47]/10 px-4 py-2 text-sm font-semibold text-[#141a47]">
-              <FolderGit2 size={16} />
-              Featured Work
-            </span>
-            <h2 className="mt-6 text-4xl font-bold text-[#141a47] sm:text-5xl lg:text-6xl" style={{ fontFamily: "'Times New Roman', Georgia, serif" }}>
-              Recent Projects
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
-              Transforming ideas into exceptional digital experiences
+            <div>
+              <div className="mb-3 flex items-center gap-4">
+                <span className="text-[13px] font-bold uppercase tracking-wide text-[#36B7F0]">
+                  Featured Work
+                </span>
+                <span className="h-px w-24 bg-[#36B7F0]/70" />
+              </div>
+
+              <h2 className="text-[2.4rem] font-extrabold leading-tight tracking-[-0.04em] text-white sm:text-[3.2rem] lg:text-[4rem]">
+                RECENT{" "}
+                <span className="font-light tracking-[-0.06em]">
+                  PROJECTS
+                </span>
+              </h2>
+            </div>
+
+            <p className="max-w-2xl text-[15px] leading-8 text-white/72">
+              A selection of digital products, platforms, and software solutions
+              designed to help businesses operate smarter, scale faster, and deliver
+              better user experiences.
             </p>
           </motion.div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {projects.map((project, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-                className="group cursor-pointer overflow-hidden rounded-2xl bg-white shadow-lg transition-all duration-300 hover:shadow-2xl"
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black/20 transition-opacity duration-300 group-hover:bg-black/40" />
-                  <div className="absolute bottom-4 left-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-[#141a47]">
-                    {project.category}
-                  </div>
+          {/* project layout */}
+          <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+            {/* featured project */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -8 }}
+              className="group relative min-h-[520px] overflow-hidden border border-[#36B7F0]/35 bg-white/5 shadow-[0_24px_70px_rgba(0,0,0,0.35)]"
+            >
+              <Image
+                src={projects[0].image}
+                alt={projects[0].title}
+                fill
+                className="object-cover opacity-70 transition duration-700 group-hover:scale-110 group-hover:opacity-85"
+              />
+
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,21,36,0.15)_0%,rgba(6,21,36,0.72)_55%,rgba(6,21,36,0.98)_100%)]" />
+
+              <div className="absolute left-8 top-8 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[12px] font-semibold uppercase tracking-wide text-white backdrop-blur-md">
+                Featured Case Study
+              </div>
+
+              <div className="absolute bottom-0 left-0 right-0 p-8 sm:p-10">
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-[#36B7F0]/15 px-4 py-2 text-[12px] font-semibold text-[#7fd7ff]">
+                  <FolderGit2 size={14} />
+                  {projects[0].category}
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-[#141a47]">{project.title}</h3>
-                  <p className="mt-2 text-sm text-gray-600">{project.description}</p>
+
+                <h3 className="max-w-xl text-[2rem] font-extrabold leading-tight tracking-[-0.04em] text-white sm:text-[2.7rem]">
+                  {projects[0].title}
+                </h3>
+
+                <p className="mt-4 max-w-xl text-[14px] leading-7 text-white/78">
+                  {projects[0].description}
+                </p>
+
+                <div className="mt-7 flex flex-wrap items-center gap-4">
                   <Link
                     href="#"
-                    className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#36B7F0] transition hover:gap-3"
+                    className="group/link inline-flex items-center gap-3 rounded-full bg-[#36A7CF] px-6 py-3 text-[14px] font-semibold text-white shadow-[0_16px_40px_rgba(54,183,240,0.24)] transition-all duration-300 hover:bg-[#267A9E]"
                   >
                     View Case Study
-                    <ArrowRight size={16} />
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#267A9E] transition-all duration-300 group-hover/link:translate-x-1 group-hover/link:bg-white/20">
+                      <ArrowRight size={15} />
+                    </span>
                   </Link>
+
+                  <div className="flex items-center gap-2 text-[13px] text-white/65">
+                    <Star size={15} className="text-[#36B7F0]" />
+                    Built for performance and scale
+                  </div>
                 </div>
-              </motion.div>
-            ))}
+              </div>
+            </motion.div>
+
+            {/* side projects */}
+            <div className="grid gap-8">
+              {projects.slice(1, 4).map((project, index) => (
+                <motion.div
+                  key={project.title}
+                  initial={{ opacity: 0, x: 40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.12, duration: 0.6 }}
+                  viewport={{ once: true }}
+                  whileHover={{ x: 6 }}
+                  className="group relative overflow-hidden border border-white/10 bg-white/[0.04] p-5 backdrop-blur-md transition-all duration-300 hover:border-[#36B7F0]/60 hover:bg-white/[0.07]"
+                >
+                  <div className="grid gap-5 sm:grid-cols-[170px_1fr] sm:items-center">
+                    <div className="relative h-[160px] overflow-hidden">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-[#061524]/25" />
+                    </div>
+
+                    <div>
+                      <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#36B7F0]/10 px-3 py-1 text-[11px] font-semibold text-[#7fd7ff]">
+                        <CheckCircle size={12} />
+                        {project.category}
+                      </div>
+
+                      <h3 className="text-[1.35rem] font-extrabold leading-tight tracking-[-0.03em] text-white">
+                        {project.title}
+                      </h3>
+
+                      <p className="mt-3 text-[13px] leading-6 text-white/68">
+                        {project.description}
+                      </p>
+
+                      <Link
+                        href="#"
+                        className="mt-4 inline-flex items-center gap-2 text-[13px] font-semibold text-[#36B7F0] transition-all duration-300 hover:gap-3 hover:text-white"
+                      >
+                        View Project
+                        <ArrowRight size={14} />
+                      </Link>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
 
+          {/* bottom CTA */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
             viewport={{ once: true }}
-            className="mt-12 text-center"
+            className="mt-14 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-10 text-center sm:flex-row sm:text-left"
           >
+            <div>
+              <h3 className="text-[1.4rem] font-bold text-white">
+                Have a project in mind?
+              </h3>
+              <p className="mt-2 text-[14px] text-white/62">
+                Let’s turn your idea into a reliable digital product.
+              </p>
+            </div>
+
             <Link
-              href="#"
-              className="inline-flex items-center gap-2 rounded-full border-2 border-[#141a47] px-8 py-3 text-sm font-semibold text-[#141a47] transition-all duration-300 hover:bg-[#141a47] hover:text-white"
+              href="/projects"
+              className="inline-flex items-center gap-3 rounded-full border border-[#36B7F0]/55 px-7 py-3 text-[14px] font-semibold text-white transition-all duration-300 hover:bg-[#36B7F0] hover:text-[#061524]"
             >
               View All Projects
-              <ArrowRight size={16} />
+              <ArrowRight size={15} />
             </Link>
           </motion.div>
         </div>
