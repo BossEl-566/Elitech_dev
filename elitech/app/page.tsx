@@ -550,61 +550,108 @@ function Home() {
         </div>
       </section>
 
-      {/* SOLUTIONS SECTION */}
-      <section id="solutions" className="bg-linear-to-br from-[#f7f5f0] to-[#ece8e0] py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* SERVICES SECTION */}
+      <section id="services" className="relative overflow-hidden bg-white py-24 font-['Poppins',sans-serif]">
+        {/* faded background image */}
+        <div className="absolute inset-0">
+          <Image
+            src={aboutBg}
+            alt="Services background"
+            fill
+            className="object-cover opacity-[0.045]"
+          />
+          <div className="absolute inset-0 bg-white/90" />
+        </div>
+
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* SECTION HEADER */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="mx-auto mb-16 max-w-3xl text-center"
           >
-            <span className="inline-flex items-center gap-2 rounded-full bg-[#141a47]/10 px-4 py-2 text-sm font-semibold text-[#141a47]">
-              <Briefcase size={16} />
-              Business Solutions
-            </span>
-            <h2 className="mt-6 text-4xl font-bold text-[#141a47] sm:text-5xl lg:text-6xl" style={{ fontFamily: "'Times New Roman', Georgia, serif" }}>
-              Tailored Solutions for Every Industry
+            <div className="mb-3 flex items-center justify-center gap-4">
+              <span className="h-px w-28 bg-[#267A9E]/70" />
+              <span className="text-[13px] font-bold uppercase tracking-wide text-[#267A9E]">
+                Elitech Dev
+              </span>
+              <span className="h-px w-28 bg-[#267A9E]/70" />
+            </div>
+
+            <h2 className="text-[2.2rem] font-extrabold leading-tight tracking-[-0.04em] text-[#07182d] sm:text-[3rem] lg:text-[3.5rem]">
+              ELITECH DEV{" "}
+              <span className="font-light tracking-[-0.05em]">
+                SERVICES
+              </span>
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
-              Specialized software solutions designed to meet your unique business requirements
+
+            <p className="mt-3 text-[14px] text-[#6c7280]">
+              Services that we provide to help your business grow digitally.
             </p>
           </motion.div>
 
-          <div className="grid gap-8 lg:grid-cols-2">
-            {solutions.map((solution, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-2xl bg-white shadow-xl transition-all duration-300 hover:shadow-2xl"
-              >
-                <div className="relative h-64 overflow-hidden">
-                  <Image
-                    src={solution.image}
-                    alt={solution.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
-                </div>
-                <div className="relative p-6">
-                  <h3 className="text-2xl font-bold text-[#141a47]">{solution.title}</h3>
-                  <p className="mt-2 text-gray-600">{solution.description}</p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {solution.features.map((feature, i) => (
-                      <span key={i} className="inline-flex items-center gap-1 rounded-full bg-[#141a47]/10 px-3 py-1 text-xs font-medium text-[#141a47]">
-                        <CheckCircle size={12} />
-                        {feature}
-                      </span>
-                    ))}
+          {/* SERVICES GRID */}
+          <div className="grid gap-14 md:grid-cols-3 lg:gap-20">
+            {[
+              {
+                icon: Code2,
+                title: "Web & Software Development",
+                description:
+                  "We design and build modern websites, dashboards, portals, and custom software systems that help businesses operate more efficiently and deliver better digital experiences.",
+              },
+              {
+                icon: Cpu,
+                title: "AI & Automation Solutions",
+                description:
+                  "We help organizations use artificial intelligence and automation to reduce repetitive work, improve decision-making, and create smarter business workflows.",
+              },
+              {
+                icon: Cloud,
+                title: "Cloud & Data Systems",
+                description:
+                  "We provide scalable cloud integration, database systems, analytics dashboards, and secure digital infrastructure for growing businesses and institutions.",
+              },
+            ].map((service, index) => {
+              const Icon = service.icon;
+
+              return (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, y: 35 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.15, duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="group text-center"
+                >
+                  {/* ICON CIRCLE */}
+                  <div className="relative mx-auto mb-8 flex h-[142px] w-[142px] items-center justify-center rounded-full bg-[#dff5fb]">
+                    {/* outer animated ring */}
+                    <div className="absolute inset-0 rounded-full border-[3px] border-[#36B7F0] transition-all duration-300 group-hover:scale-105 group-hover:border-[#267A9E]" />
+
+                    {/* small dots */}
+                    <span className="absolute left-[8px] top-[31px] h-4 w-4 rounded-full bg-[#267A9E]" />
+                    <span className="absolute left-[34px] top-[-4px] h-4 w-4 rounded-full bg-[#267A9E]" />
+
+                    {/* icon */}
+                    <Icon
+                      size={48}
+                      strokeWidth={2.4}
+                      className="relative z-10 text-[#155f7b] transition-all duration-300 group-hover:scale-110 group-hover:text-[#034663]"
+                    />
                   </div>
-                </div>
-              </motion.div>
-            ))}
+
+                  <h3 className="mx-auto max-w-[320px] text-[1.35rem] font-extrabold leading-tight tracking-[-0.03em] text-[#101827] sm:text-[1.45rem]">
+                    {service.title}
+                  </h3>
+
+                  <p className="mx-auto mt-5 max-w-[360px] text-[14px] leading-8 text-[#606875]">
+                    {service.description}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
