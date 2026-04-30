@@ -33,6 +33,7 @@ import aboutImgThree from "./assets/about-3.png";
 import aboutImgFour from "./assets/about-4.png";
 import softwareOne from "./assets/about-2.png";
 import softwareTwo from "./assets/about-3.png";
+import contactBg from "./assets/contact-bg.png";
 
 const focusAreas = [
   {
@@ -1192,232 +1193,80 @@ function Home() {
         </div>
       </section>
 
-      {/* TESTIMONIALS SECTION */}
-      <section className="bg-white py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* CONTACT CTA SECTION */}
+    <section
+      id="contact"
+      className="relative overflow-hidden bg-[#061524] py-28 font-['Poppins',sans-serif]"
+    >
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src={contactBg}
+          alt="Contact Elitech Dev"
+          fill
+          className="object-cover opacity-55"
+        />
+
+        {/* dark overlays */}
+        <div className="absolute inset-0 bg-[#061524]/78" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,21,36,0.45)_0%,rgba(6,21,36,0.82)_48%,rgba(6,21,36,0.98)_100%)]" />
+      </div>
+
+      {/* subtle glow */}
+      <div className="pointer-events-none absolute right-[14%] top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-[#36B7F0]/10 blur-3xl" />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid min-h-[360px] items-center lg:grid-cols-2">
+          {/* left empty space to show background image */}
+          <div className="hidden lg:block" />
+
+          {/* right content */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, x: 45 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="max-w-2xl"
           >
-            <span className="inline-flex items-center gap-2 rounded-full bg-[#141a47]/10 px-4 py-2 text-sm font-semibold text-[#141a47]">
-              <Quote size={16} />
-              Testimonials
-            </span>
-            <h2 className="mt-6 text-4xl font-bold text-[#141a47] sm:text-5xl lg:text-6xl" style={{ fontFamily: "'Times New Roman', Georgia, serif" }}>
-              What Our Clients Say
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
-              Trusted by industry leaders worldwide
-            </p>
-          </motion.div>
-
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-                className="rounded-2xl border border-gray-200 bg-white p-8 shadow-lg transition-all duration-300 hover:shadow-2xl"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="relative h-14 w-14 overflow-hidden rounded-full">
-                    <Image
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-[#141a47]">{testimonial.name}</h3>
-                    <p className="text-sm text-gray-500">{testimonial.role}</p>
-                  </div>
-                </div>
-                <div className="mt-4 flex gap-1">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} size={16} fill="#f4b400" className="text-[#f4b400]" />
-                  ))}
-                </div>
-                <p className="mt-4 text-gray-600 leading-relaxed">"{testimonial.content}"</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PARTNERS SECTION */}
-      <section className="bg-linear-to-br from-[#f7f5f0] to-[#ece8e0] py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <p className="text-sm font-semibold uppercase tracking-wider text-gray-500">Trusted By Innovative Companies</p>
-          </motion.div>
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            {partners.map((partner, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="relative h-20 grayscale transition-all duration-300 hover:grayscale-0"
-              >
-                <Image src={partner} alt={`Partner ${index + 1}`} fill className="object-contain" />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CONTACT SECTION */}
-      <section id="contact" className="bg-[#141a47] py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-white"
-            >
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold">
-                <Mail size={16} />
-                Get In Touch
+            <div className="mb-3 flex items-center gap-4">
+              <span className="text-[13px] font-bold uppercase tracking-wide text-[#36B7F0]">
+                Elitech Dev
               </span>
-              <h2 className="mt-6 text-4xl font-bold sm:text-5xl lg:text-6xl" style={{ fontFamily: "'Times New Roman', Georgia, serif" }}>
-                Let's Work Together
-              </h2>
-              <p className="mt-4 text-lg text-white/80">
-                Ready to start your next project? We'd love to hear from you. 
-                Let's discuss how we can help transform your business.
-              </p>
-              
-              <div className="mt-8 space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="rounded-full bg-white/10 p-3">
-                    <Mail size={24} className="text-[#36B7F0]" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-white/70">Email Us</p>
-                    <a href="mailto:info@elitech.com" className="text-white hover:text-[#36B7F0] transition">
-                      info@elitech.com
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="rounded-full bg-white/10 p-3">
-                    <Phone size={24} className="text-[#36B7F0]" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-white/70">Call Us</p>
-                    <a href="tel:+1234567890" className="text-white hover:text-[#36B7F0] transition">
-                      +1 (234) 567-890
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="rounded-full bg-white/10 p-3">
-                    <MapPin size={24} className="text-[#36B7F0]" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-white/70">Visit Us</p>
-                    <p className="text-white">123 Tech Street, Silicon Valley, CA 94025</p>
-                  </div>
-                </div>
-              </div>
+              <span className="h-px w-28 bg-[#36B7F0]/75" />
+            </div>
 
-              <div className="mt-8 flex gap-4">
-                {[FaFacebookF, FaLinkedinIn,
-  FaInstagram,
-  FaYoutube
-              
-                ].map((Icon, i) => (
-                  <Link
-                    key={i}
-                    href="#"
-                    className="rounded-full bg-white/10 p-3 transition-all duration-300 hover:bg-[#36B7F0] hover:scale-110"
-                  >
-                    <Icon size={20} />
-                  </Link>
-                ))}
-              </div>
-            </motion.div>
+            <h2 className="text-[2.4rem] font-extrabold leading-tight tracking-[-0.04em] text-white sm:text-[3.2rem] lg:text-[4rem]">
+              CONTACT US{" "}
+              <span className="font-light tracking-[-0.06em]">
+                TODAY!
+              </span>
+            </h2>
+
+            <p className="mt-5 max-w-[620px] text-[15px] leading-8 text-white/86 sm:text-[16px]">
+              Get in touch with us if you want to build reliable software,
+              improve your digital operations, automate your workflows, or launch
+              a modern technology solution for your business. We would be happy to
+              understand your goals and support you from design to implementation.
+            </p>
 
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-2xl p-8 shadow-2xl"
+              whileHover={{ scale: 1.03 }}
+              className="mt-8"
             >
-              <form className="space-y-6">
-                <div className="grid gap-6 sm:grid-cols-2">
-                  <div>
-                    <label className="mb-2 block text-sm font-semibold text-[#141a47]">First Name</label>
-                    <input
-                      type="text"
-                      className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-[#36B7F0] focus:outline-none focus:ring-2 focus:ring-[#36B7F0]/20"
-                      placeholder="John"
-                    />
-                  </div>
-                  <div>
-                    <label className="mb-2 block text-sm font-semibold text-[#141a47]">Last Name</label>
-                    <input
-                      type="text"
-                      className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-[#36B7F0] focus:outline-none focus:ring-2 focus:ring-[#36B7F0]/20"
-                      placeholder="Doe"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label className="mb-2 block text-sm font-semibold text-[#141a47]">Email Address</label>
-                  <input
-                    type="email"
-                    className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-[#36B7F0] focus:outline-none focus:ring-2 focus:ring-[#36B7F0]/20"
-                    placeholder="john@example.com"
-                  />
-                </div>
-                <div>
-                  <label className="mb-2 block text-sm font-semibold text-[#141a47]">Project Type</label>
-                  <select className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-[#36B7F0] focus:outline-none focus:ring-2 focus:ring-[#36B7F0]/20">
-                    <option>Web Development</option>
-                    <option>Mobile App Development</option>
-                    <option>AI Solutions</option>
-                    <option>Cloud Integration</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="mb-2 block text-sm font-semibold text-[#141a47]">Message</label>
-                  <textarea
-                    rows={4}
-                    className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-[#36B7F0] focus:outline-none focus:ring-2 focus:ring-[#36B7F0]/20"
-                    placeholder="Tell us about your project..."
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="group w-full rounded-full bg-linear-to-r from-[#36B7F0] to-[#5CC6F3] px-8 py-4 font-bold text-[#141a47] transition-all duration-300 hover:scale-105 hover:shadow-xl"
-                >
-                  Send Message
-                  <ArrowRight size={18} className="ml-2 inline transition-transform group-hover:translate-x-1" />
-                </button>
-              </form>
+              <Link
+                href="/contact"
+                className="group inline-flex items-center gap-3 rounded-full bg-[#36A7CF] px-6 py-3 text-[15px] font-semibold text-white shadow-[0_16px_40px_rgba(54,183,240,0.24)] transition-all duration-300 hover:bg-[#267A9E]"
+              >
+                Contact Us Now
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#267A9E] transition-all duration-300 group-hover:translate-x-1 group-hover:bg-white/20">
+                  <ArrowRight size={15} />
+                </span>
+              </Link>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </div>
+    </section>
 
      
     </div>
