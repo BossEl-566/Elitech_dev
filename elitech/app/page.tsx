@@ -10,6 +10,15 @@ import {
   Globe, TrendingUp, Heart, Award, MessageCircle, Calendar, ChevronRight
 } from "lucide-react";
 import {
+  Brain,
+  LayoutDashboard,
+  Paintbrush,
+  Shield,
+  Rocket,
+  ShoppingBag,
+  CreditCard,
+} from "lucide-react";
+import {
   FaFacebookF,
   FaLinkedinIn,
   FaInstagram,
@@ -22,6 +31,99 @@ import aboutImgOne from "./assets/about-1.png";
 import aboutImgTwo from "./assets/about-2.png";
 import aboutImgThree from "./assets/about-3.png";
 import aboutImgFour from "./assets/about-4.png";
+import softwareOne from "./assets/about-2.png";
+import softwareTwo from "./assets/about-3.png";
+
+const focusAreas = [
+  {
+    icon: Code2,
+    title: "Core Development",
+    href: "/services",
+    image: aboutImgOne,
+    description:
+      "We build reliable web applications, mobile apps, desktop software, and custom systems designed around real business operations.",
+    links: [
+      "Web Development",
+      "Mobile App Development",
+      "Desktop Applications",
+      "Custom Software",
+    ],
+  },
+  {
+    icon: Brain,
+    title: "Emerging Technology",
+    href: "/services",
+    image: aboutImgTwo,
+    description:
+      "We help businesses adopt AI, machine learning, automation, and cloud technologies to improve speed, intelligence, and efficiency.",
+    links: [
+      "AI Solutions",
+      "Machine Learning",
+      "Automation Systems",
+      "Cloud Integration",
+    ],
+  },
+  {
+    icon: Paintbrush,
+    title: "Design & Support",
+    href: "/services",
+    image: aboutImgThree,
+    description:
+      "We provide clean UI/UX design, modern web design, system maintenance, upgrades, and long-term technical support.",
+    links: [
+      "UI/UX Design",
+      "Web Design",
+      "Maintenance & Support",
+      "System Upgrades",
+    ],
+  },
+  {
+    icon: Briefcase,
+    title: "Business Solutions",
+    href: "/solutions",
+    image: aboutImgFour,
+    description:
+      "We create digital platforms for schools, hospitals, businesses, e-commerce operations, and growing institutions.",
+    links: [
+      "Business Management Systems",
+      "School Management Systems",
+      "Hospital Management Systems",
+      "E-commerce Platforms",
+    ],
+  },
+  {
+    icon: Sparkles,
+    title: "Digital Products",
+    href: "/solutions",
+    image: aboutImgOne,
+    description:
+      "We develop client portals, booking platforms, payment systems, admin dashboards, and other digital products for modern companies.",
+    links: [
+      "Client Portals",
+      "Booking Platforms",
+      "Payment Integrations",
+      "Admin Dashboards",
+    ],
+  },
+];
+const softwareHighlights = [
+  {
+    title: "Business Management Systems",
+    badge: "BMS",
+    image: softwareOne,
+    href: "/solution/business-management-systems",
+    description:
+      "We build business management systems that help companies manage operations, customers, inventory, reporting, internal workflows, and daily business activities from one reliable digital platform.",
+  },
+  {
+    title: "School Management Systems",
+    badge: "SMS",
+    image: softwareTwo,
+    href: "/solution/school-management-systems",
+    description:
+      "Our school management systems help institutions manage students, staff, fees, attendance, results, communication, and administrative processes through a modern and easy-to-use platform.",
+  },
+];
 
 const services = [
   {
@@ -652,6 +754,362 @@ function Home() {
                 </motion.div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* FOCUS AREAS SECTION */}
+      <section className="relative overflow-hidden bg-[#061524] py-24 font-['Poppins',sans-serif]">
+        {/* background image */}
+        <div className="absolute inset-0">
+          <Image
+            src={heroBg}
+            alt="Technology background"
+            fill
+            className="object-cover opacity-[0.12]"
+          />
+          <div className="absolute inset-0 bg-[#061524]/92" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(54,183,240,0.13),transparent_42%)]" />
+        </div>
+
+        {/* decorative glows */}
+        <div className="pointer-events-none absolute left-[-8%] top-20 h-96 w-96 rounded-full bg-[#36B7F0]/10 blur-3xl" />
+        <div className="pointer-events-none absolute right-[-10%] bottom-16 h-96 w-96 rounded-full bg-[#267A9E]/12 blur-3xl" />
+
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* SECTION HEADER */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="mx-auto mb-14 max-w-3xl text-center"
+          >
+            <div className="mb-3 flex items-center justify-center gap-4">
+              <span className="h-px w-20 bg-[#36B7F0]/70" />
+              <span className="text-[12px] font-bold uppercase tracking-wide text-[#36B7F0]">
+                Elitech Dev
+              </span>
+              <span className="h-px w-20 bg-[#36B7F0]/70" />
+            </div>
+
+            <h2 className="text-[2.1rem] font-extrabold leading-tight tracking-[-0.04em] text-white sm:text-[2.8rem] lg:text-[3.4rem]">
+              WHAT{" "}
+              <span className="font-light tracking-[-0.05em]">
+                CONCERNS US
+              </span>
+            </h2>
+
+            <p className="mx-auto mt-4 max-w-2xl text-[14px] leading-7 text-white/72">
+              These are the major areas we focus on when helping businesses,
+              institutions, and organizations build stronger digital systems.
+            </p>
+          </motion.div>
+
+          {/* cards */}
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {focusAreas.slice(0, 3).map((item, index) => {
+              const Icon = item.icon;
+
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 35 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.12, duration: 0.6 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -8 }}
+                  className="group relative min-h-[360px] overflow-hidden border border-[#36B7F0]/35 bg-[#0b1d31]/80 p-8 shadow-[0_22px_55px_rgba(0,0,0,0.28)] transition-all duration-300 hover:border-[#36B7F0]/80"
+                >
+                  {/* card background */}
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover opacity-[0.18] transition-all duration-500 group-hover:scale-110 group-hover:opacity-[0.24]"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-br from-[#07182d]/95 via-[#07182d]/82 to-[#123d75]/70" />
+
+                  {/* content */}
+                  <div className="relative z-10">
+                    <div className="mb-9 flex h-16 w-16 items-center justify-center rounded-full border-[5px] border-white/85 bg-white shadow-lg">
+                      <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#e6f8fd]">
+                        <Icon size={24} className="text-[#267A9E]" />
+                      </div>
+                    </div>
+
+                    <h3 className="text-[1.45rem] font-extrabold leading-tight tracking-[-0.03em] text-white">
+                      {item.title}
+                    </h3>
+
+                    <div className="mt-5 flex gap-4">
+                      <span className="mt-1 h-24 w-[3px] bg-[#c73333]" />
+
+                      <div>
+                        <p className="text-[13px] leading-6 text-white/82">
+                          {item.description}
+                        </p>
+
+                        <div className="mt-4 flex flex-wrap gap-2">
+                          {item.links.slice(0, 2).map((link) => (
+                            <span
+                              key={link}
+                              className="rounded-full border border-white/15 bg-white/8 px-3 py-1 text-[11px] text-white/75"
+                            >
+                              {link}
+                            </span>
+                          ))}
+                        </div>
+
+                        <Link
+                          href={item.href}
+                          className="mt-5 inline-flex items-center gap-2 text-[13px] font-semibold text-white underline decoration-white/40 underline-offset-4 transition-all duration-300 hover:gap-3 hover:text-[#36B7F0]"
+                        >
+                          Read More
+                          <ChevronRight size={14} />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* lower mini cards */}
+          <div className="mt-8 grid gap-8 md:grid-cols-2">
+            {focusAreas.slice(3).map((item, index) => {
+              const Icon = item.icon;
+
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 35 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.12, duration: 0.6 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -6 }}
+                  className="group relative overflow-hidden border border-[#36B7F0]/30 bg-white/5 p-7 backdrop-blur-md transition-all duration-300 hover:border-[#36B7F0]/75"
+                >
+                  <div className="absolute inset-0 bg-linear-to-r from-[#0b1d31]/90 to-[#123d75]/40" />
+
+                  <div className="relative z-10 flex flex-col gap-6 sm:flex-row sm:items-start">
+                    <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-[5px] border-white/85 bg-white shadow-lg">
+                      <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#e6f8fd]">
+                        <Icon size={24} className="text-[#267A9E]" />
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[1.35rem] font-extrabold tracking-[-0.03em] text-white">
+                        {item.title}
+                      </h3>
+
+                      <p className="mt-3 max-w-xl text-[13px] leading-6 text-white/78">
+                        {item.description}
+                      </p>
+
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {item.links.map((link) => (
+                          <span
+                            key={link}
+                            className="rounded-full border border-white/15 bg-white/8 px-3 py-1 text-[11px] text-white/72"
+                          >
+                            {link}
+                          </span>
+                        ))}
+                      </div>
+
+                      <Link
+                        href={item.href}
+                        className="mt-5 inline-flex items-center gap-2 text-[13px] font-semibold text-[#36B7F0] transition-all duration-300 hover:gap-3 hover:text-white"
+                      >
+                        Explore Area
+                        <ArrowRight size={14} />
+                      </Link>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* slider dots visual */}
+          <div className="mt-14 flex items-center justify-center gap-2">
+            <span className="h-2 w-2 rounded-full bg-[#36B7F0]/45" />
+            <span className="h-3 w-3 rounded-full bg-[#36B7F0]" />
+            <span className="h-2 w-2 rounded-full bg-[#36B7F0]/45" />
+          </div>
+        </div>
+      </section>
+
+      {/* RIGHT SOFTWARE SECTION */}
+      <section
+        id="solutions"
+        className="relative overflow-hidden bg-[#f7f8f9] py-24 font-['Poppins',sans-serif]"
+      >
+        {/* faded background */}
+        <div className="absolute inset-0">
+          <Image
+            src={aboutBg}
+            alt="Software solutions background"
+            fill
+            className="object-cover opacity-[0.05]"
+          />
+          <div className="absolute inset-0 bg-white/88" />
+        </div>
+
+        {/* subtle blue glows */}
+        <div className="pointer-events-none absolute left-[-8%] top-20 h-96 w-96 rounded-full bg-[#267A9E]/8 blur-3xl" />
+        <div className="pointer-events-none absolute right-[-8%] bottom-20 h-96 w-96 rounded-full bg-[#141a47]/6 blur-3xl" />
+
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* SECTION HEADER */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="mx-auto mb-16 max-w-3xl text-center"
+          >
+            <div className="mb-3 flex items-center justify-center gap-4">
+              <span className="h-px w-24 bg-[#267A9E]/70" />
+              <span className="text-[12px] font-bold uppercase tracking-wide text-[#267A9E]">
+                Elitech Dev
+              </span>
+              <span className="h-px w-24 bg-[#267A9E]/70" />
+            </div>
+
+            <h2 className="text-[2.15rem] font-extrabold leading-tight tracking-[-0.04em] text-[#07182d] sm:text-[2.9rem] lg:text-[3.35rem]">
+              THE RIGHT{" "}
+              <span className="font-light tracking-[-0.05em]">
+                SOFTWARE
+              </span>
+            </h2>
+
+            <p className="mt-3 text-[14px] text-[#6c7280]">
+              Software solutions that we provide to help organizations work smarter.
+            </p>
+          </motion.div>
+
+          {/* FIRST ROW */}
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            {/* image */}
+            <motion.div
+              initial={{ opacity: 0, x: -45 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+              className="relative mx-auto w-full max-w-[560px]"
+            >
+              <div className="absolute -left-4 -top-4 h-[82%] w-[82%] border-2 border-[#b62c2c]/75" />
+
+              <div className="relative h-[270px] overflow-hidden shadow-[0_18px_45px_rgba(20,26,71,0.15)] sm:h-[315px]">
+                <Image
+                  src={softwareHighlights[0].image}
+                  alt={softwareHighlights[0].title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              <div className="absolute right-[-22px] top-1/2 z-20 flex h-[82px] w-[82px] -translate-y-1/2 items-center justify-center rounded-full border-[4px] border-[#07182d] bg-white shadow-xl">
+                <span className="text-center text-[10px] font-semibold leading-tight text-[#07182d]">
+                  {softwareHighlights[0].badge}
+                </span>
+              </div>
+            </motion.div>
+
+            {/* content */}
+            <motion.div
+              initial={{ opacity: 0, x: 45 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="absolute -left-10 -top-10 hidden h-40 w-52 bg-[repeating-linear-gradient(135deg,rgba(38,122,158,0.08)_0px,rgba(38,122,158,0.08)_1px,transparent_1px,transparent_7px)] lg:block" />
+
+              <div className="relative">
+                <h3 className="text-[1.8rem] font-extrabold tracking-[-0.04em] text-[#101827] sm:text-[2.1rem]">
+                  {softwareHighlights[0].title}
+                </h3>
+
+                <p className="mt-5 max-w-xl text-[14px] leading-8 text-[#606875]">
+                  {softwareHighlights[0].description}
+                </p>
+
+                <motion.div whileHover={{ scale: 1.03 }} className="mt-7">
+                  <Link
+                    href={softwareHighlights[0].href}
+                    className="group inline-flex items-center gap-3 rounded-full bg-[#267A9E] px-5 py-2.5 text-[13px] font-semibold text-white shadow-[0_12px_30px_rgba(38,122,158,0.24)] transition-all duration-300 hover:bg-[#034663]"
+                  >
+                    Read More
+                    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#0f6f91] transition-all duration-300 group-hover:translate-x-1 group-hover:bg-white/20">
+                      <ArrowRight size={14} />
+                    </span>
+                  </Link>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* SECOND ROW */}
+          <div className="mt-24 grid items-center gap-12 lg:grid-cols-2">
+            {/* content */}
+            <motion.div
+              initial={{ opacity: 0, x: -45 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+              className="order-2 lg:order-1"
+            >
+              <h3 className="text-[1.8rem] font-extrabold tracking-[-0.04em] text-[#101827] sm:text-[2.1rem]">
+                {softwareHighlights[1].title}
+              </h3>
+
+              <p className="mt-5 max-w-xl text-[14px] leading-8 text-[#606875]">
+                {softwareHighlights[1].description}
+              </p>
+
+              <motion.div whileHover={{ scale: 1.03 }} className="mt-7">
+                <Link
+                  href={softwareHighlights[1].href}
+                  className="group inline-flex items-center gap-3 rounded-full bg-[#267A9E] px-5 py-2.5 text-[13px] font-semibold text-white shadow-[0_12px_30px_rgba(38,122,158,0.24)] transition-all duration-300 hover:bg-[#034663]"
+                >
+                  Read More
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#0f6f91] transition-all duration-300 group-hover:translate-x-1 group-hover:bg-white/20">
+                    <ArrowRight size={14} />
+                  </span>
+                </Link>
+              </motion.div>
+            </motion.div>
+
+            {/* image */}
+            <motion.div
+              initial={{ opacity: 0, x: 45 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+              className="relative order-1 mx-auto w-full max-w-[560px] lg:order-2"
+            >
+              <div className="absolute -right-4 -top-4 h-[82%] w-[82%] border-2 border-[#b62c2c]/75" />
+
+              <div className="relative h-[270px] overflow-hidden shadow-[0_18px_45px_rgba(20,26,71,0.15)] sm:h-[315px]">
+                <Image
+                  src={softwareHighlights[1].image}
+                  alt={softwareHighlights[1].title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              <div className="absolute left-[-22px] top-1/2 z-20 flex h-[82px] w-[82px] -translate-y-1/2 items-center justify-center rounded-full border-[4px] border-[#07182d] bg-white shadow-xl">
+                <span className="text-center text-[10px] font-semibold leading-tight text-[#07182d]">
+                  {softwareHighlights[1].badge}
+                </span>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
