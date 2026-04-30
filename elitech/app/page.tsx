@@ -17,6 +17,11 @@ import {
   FaXTwitter
 } from "react-icons/fa6";
 import heroBg from "./assets/hero-bg.png";
+import aboutBg from "./assets/about-bg.png";
+import aboutImgOne from "./assets/about-1.png";
+import aboutImgTwo from "./assets/about-2.png";
+import aboutImgThree from "./assets/about-3.png";
+import aboutImgFour from "./assets/about-4.png";
 
 const services = [
   {
@@ -154,282 +159,393 @@ function Home() {
     <div className="relative overflow-hidden bg-[#f7f5f0]" style={{ fontFamily: "'Droid Sans Mono', 'Courier New', monospace" }}>
       
       {/* HERO SECTION */}
-<section className="relative min-h-screen overflow-hidden bg-[#07182d] font-['Poppins',sans-serif]">
-  {/* Background image */}
-  <div className="absolute inset-0">
-    <Image
-      src={heroBg}
-      alt="Corporate meeting background"
-      fill
-      priority
-      className="object-cover"
-    />
-    <div className="absolute inset-0 bg-[#061a31]/78" />
-    <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,14,35,0.88)_0%,rgba(3,14,35,0.62)_35%,rgba(3,14,35,0.35)_100%)]" />
-  </div>
-
-  {/* soft blue mood */}
-  <div className="absolute inset-0">
-    <div className="absolute -left-30 top-45 h-95 w-95 rounded-full bg-[#1d8fca]/10 blur-3xl" />
-    <div className="absolute right-[8%] top-[20%] h-70 w-70 rounded-full bg-[#123d75]/18 blur-3xl" />
-  </div>
-
-  {/* content */}
-  <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-4 pb-16 pt-28 sm:px-6 lg:px-8 lg:pt-32">
-    <div className="grid w-full items-center gap-10 lg:grid-cols-[120px_minmax(0,720px)_1fr]">
-      
-      {/* Left side rail */}
-      <motion.div 
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="hidden h-full flex-col items-center justify-between py-10 lg:flex"
-      >
-        <div className="flex flex-col items-center">
+      <section className="relative min-h-screen overflow-hidden bg-[#07182d] font-['Poppins',sans-serif]">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <Image
+            src={heroBg}
+            alt="Corporate meeting background"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-[#061a31]/78" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,14,35,0.88)_0%,rgba(3,14,35,0.62)_35%,rgba(3,14,35,0.35)_100%)]" />
         </div>
 
-        <div className="flex flex-col items-center gap-5">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="flex items-center gap-3"
-          >
-            <span className="text-[11px] text-white/80 [writing-mode:vertical-rl]">
-              Follow Us
-            </span>
-            <span className="h-20 w-px bg-white/30" />
-          </motion.div>
+        {/* soft blue mood */}
+        <div className="absolute inset-0">
+          <div className="absolute -left-30 top-45 h-95 w-95 rounded-full bg-[#1d8fca]/10 blur-3xl" />
+          <div className="absolute right-[8%] top-[20%] h-70 w-70 rounded-full bg-[#123d75]/18 blur-3xl" />
+        </div>
 
-          <div className="flex flex-col gap-3">
-            {[
-              { icon: FaFacebookF, href: "#", label: "Facebook" },
-              { icon: FaInstagram, href: "#", label: "Instagram" },
-              { icon: FaXTwitter, href: "#", label: "X" },
-            ].map((item, index) => {
-              const Icon = item.icon;
+        {/* content */}
+        <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-4 pb-16 pt-28 sm:px-6 lg:px-8 lg:pt-32">
+          <div className="grid w-full items-center gap-10 lg:grid-cols-[120px_minmax(0,720px)_1fr]">
+            
+            {/* Left side rail */}
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="hidden h-full flex-col items-center justify-between py-10 lg:flex"
+            >
+              <div className="flex flex-col items-center">
+              </div>
 
-              return (
-                <motion.div
-                  key={item.label}
+              <div className="flex flex-col items-center gap-5">
+                <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
-                  whileHover={{ scale: 1.1, rotate: 12 }}
+                  className="flex items-center gap-3"
                 >
-                  <Link
-                    href={item.href}
-                    aria-label={item.label}
-                    className="flex h-9 w-9 items-center justify-center rounded-full border border-white/45 text-white/90 transition-all duration-300 hover:border-[#7fd7ff] hover:text-[#7fd7ff]"
-                  >
-                    <Icon className="text-[12px]" />
-                  </Link>
+                  <span className="text-[11px] text-white/80 [writing-mode:vertical-rl]">
+                    Follow Us
+                  </span>
+                  <span className="h-20 w-px bg-white/30" />
                 </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </motion.div>
 
-      {/* Main hero copy */}
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="relative max-w-190"
-      >
-        <div className="relative inline-block">
-          {/* frame */}
-          <div className="pointer-events-none absolute left-0 top-0 h-70 w-55 border-l-4 border-t-4 border-[#5ecfff] sm:h-80 sm:w-65" />
-          <div className="pointer-events-none absolute bottom-4.5 left-0 h-25 w-55 border-b-4 border-r-4 border-[#5ecfff] sm:w-65" />
+                <div className="flex flex-col gap-3">
+                  {[
+                    { icon: FaFacebookF, href: "#", label: "Facebook" },
+                    { icon: FaInstagram, href: "#", label: "Instagram" },
+                    { icon: FaXTwitter, href: "#", label: "X" },
+                  ].map((item, index) => {
+                    const Icon = item.icon;
 
-          {/* main content */}
-          <div className="relative z-10 pl-8 pt-12 sm:pl-12 sm:pt-14">
-            <motion.h1 
-              initial={{ opacity: 0, y: 30 }}
+                    return (
+                      <motion.div
+                        key={item.label}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.1, duration: 0.5 }}
+                        viewport={{ once: true }}
+                        whileHover={{ scale: 1.1, rotate: 12 }}
+                      >
+                        <Link
+                          href={item.href}
+                          aria-label={item.label}
+                          className="flex h-9 w-9 items-center justify-center rounded-full border border-white/45 text-white/90 transition-all duration-300 hover:border-[#7fd7ff] hover:text-[#7fd7ff]"
+                        >
+                          <Icon className="text-[12px]" />
+                        </Link>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Main hero copy */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="max-w-175 text-[2.8rem] font-bold leading-[0.9] tracking-[-0.03em] text-white sm:text-[3.8rem] lg:text-[4.6rem]"
+              className="relative max-w-190"
             >
-              WE
-              <br />
-              IMPLEMENT
-            </motion.h1>
+              <div className="relative inline-block">
+                {/* frame */}
+                <div className="pointer-events-none absolute left-0 top-0 h-70 w-55 border-l-4 border-t-4 border-[#5ecfff] sm:h-80 sm:w-65" />
+                <div className="pointer-events-none absolute bottom-4.5 left-0 h-25 w-55 border-b-4 border-r-4 border-[#5ecfff] sm:w-65" />
 
-            <motion.h2 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.6 }}
-              viewport={{ once: true }}
-              className="mt-4 text-[1.6rem] font-bold leading-none tracking-[-0.02em] text-white sm:text-[2.2rem] lg:text-[2.8rem]"
-            >
-              CORPORATE SOFTWARE
-            </motion.h2>
-
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              viewport={{ once: true }}
-              className="mt-6 flex max-w-[560px] items-start gap-4"
-            >
-              <div className="mt-1 hidden h-14 w-[3px] bg-[#5ecfff] sm:block" />
-              <p className="max-w-[430px] text-[13px] leading-6 text-white/82 sm:text-[14px]">
-                We implement the corporate performance software
-                {" "}
-                <span className="font-medium text-white">“Elitech Dev”</span>
-                {" "}
-                for consolidation, planning and reporting purposes.
-              </p>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.02 }}
-              className="mt-16"
-            >
-              <Link
-                href="/contact"
-                className="group inline-flex items-center gap-3 rounded-full bg-[#267A9E] px-5 py-2.5 text-[13px] font-semibold text-white shadow-[0_10px_30px_rgba(105,201,243,0.22)] transition-all duration-300 hover:bg-[#034663]"
-              >
-                Get Started Now
-                <motion.span 
-                  whileHover={{ x: 4 }}
-                  className="flex h-7 w-7 items-center justify-center rounded-full bg-white/14 transition-all duration-300"
-                >
-                  <ArrowRight size={14} />
-                </motion.span>
-              </Link>
-            </motion.div>
-          </div>
-
-          {/* vertical text */}
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            viewport={{ once: true }}
-            className="absolute left-[-26px] top-[68px] hidden lg:block"
-          >
-            <span className="text-[10px] font-medium tracking-[0.2em] text-[#86d8ff] [writing-mode:vertical-rl]">
-              ELITECH DEV
-            </span>
-          </motion.div>
-        </div>
-      </motion.div>
-
-      {/* Right decoration */}
-      <motion.div 
-        initial={{ opacity: 0, x: 50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="hidden justify-end lg:flex"
-      >
-        <div className="mr-6 flex flex-col items-center">
-          <motion.div 
-            whileHover={{ scale: 1.1 }}
-            className="mb-4 flex h-4 w-4 items-center justify-center rounded-full border border-white/70"
-          >
-            <div className="h-1 w-1 rounded-full bg-white" />
-          </motion.div>
-
-          <div className="h-20 w-px bg-white/35" />
-
-          <div className="mt-3 flex flex-col gap-2">
-            <motion.span 
-              whileHover={{ scale: 1.5 }}
-              className="h-1.5 w-1.5 rounded-full bg-white/95" 
-            />
-            <motion.span 
-              whileHover={{ scale: 1.5 }}
-              className="h-1.5 w-1.5 rounded-full bg-white/60" 
-            />
-            <motion.span 
-              whileHover={{ scale: 1.5 }}
-              className="h-1.5 w-1.5 rounded-full bg-white/35" 
-            />
-          </div>
-        </div>
-      </motion.div>
-    </div>
-  </div>
-
-  {/* bottom center scroll/mouse hint */}
-  <motion.div 
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.4, duration: 0.6 }}
-    viewport={{ once: true }}
-    whileHover={{ scale: 1.1 }}
-    className="absolute bottom-[-26px] left-1/2 z-20 -translate-x-1/2"
-  >
-    <div className="flex h-12 w-12 items-center justify-center rounded-full border-[5px] border-white bg-[#f6f6f6] shadow-lg">
-      <div className="flex h-7 w-7 items-start justify-center rounded-full border border-[#c9c9c9] bg-white pt-1">
-        <div className="h-1.5 w-0.5 rounded-full bg-[#9a9a9a]" />
-      </div>
-    </div>
-  </motion.div>
-</section>
-
-      {/* SERVICES SECTION */}
-      <section id="services" className="bg-white py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <span className="inline-flex items-center gap-2 rounded-full bg-[#141a47]/10 px-4 py-2 text-sm font-semibold text-[#141a47]">
-              <Sparkles size={16} />
-              Our Services
-            </span>
-            <h2 className="mt-6 text-4xl font-bold text-[#141a47] sm:text-5xl lg:text-6xl" style={{ fontFamily: "'Times New Roman', Georgia, serif" }}>
-              What We Do
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
-              Comprehensive technology solutions tailored to your business needs
-            </p>
-          </motion.div>
-
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -10 }}
-                  className="group rounded-2xl border border-gray-200 bg-white p-8 shadow-lg transition-all duration-300 hover:shadow-2xl"
-                >
-                  <div className={`rounded-xl bg-linear-to-br ${service.gradient} p-3 w-fit`}>
-                    <Icon size={32} className="text-[#36B7F0]" />
-                  </div>
-                  <h3 className="mt-6 text-xl font-bold text-[#141a47]">{service.title}</h3>
-                  <p className="mt-3 text-gray-600">{service.description}</p>
-                  <Link
-                    href="#"
-                    className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#36B7F0] transition hover:gap-3"
+                {/* main content */}
+                <div className="relative z-10 pl-8 pt-12 sm:pl-12 sm:pt-14">
+                  <motion.h1 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true }}
+                    className="max-w-175 text-[2.8rem] font-bold leading-[0.9] tracking-[-0.03em] text-white sm:text-[3.8rem] lg:text-[4.6rem]"
                   >
-                    Learn More
-                    <ChevronRight size={16} />
+                    WE
+                    <br />
+                    IMPLEMENT
+                  </motion.h1>
+
+                  <motion.h2 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1, duration: 0.6 }}
+                    viewport={{ once: true }}
+                    className="mt-4 text-[1.6rem] font-bold leading-none tracking-[-0.02em] text-white sm:text-[2.2rem] lg:text-[2.8rem]"
+                  >
+                    CORPORATE SOFTWARE
+                  </motion.h2>
+
+                  <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2, duration: 0.6 }}
+                    viewport={{ once: true }}
+                    className="mt-6 flex max-w-[560px] items-start gap-4"
+                  >
+                    <div className="mt-1 hidden h-14 w-[3px] bg-[#5ecfff] sm:block" />
+                    <p className="max-w-[430px] text-[13px] leading-6 text-white/82 sm:text-[14px]">
+                      We implement the corporate performance software
+                      {" "}
+                      <span className="font-medium text-white">“Elitech Dev”</span>
+                      {" "}
+                      for consolidation, planning and reporting purposes.
+                    </p>
+                  </motion.div>
+
+                  <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3, duration: 0.6 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.02 }}
+                    className="mt-16"
+                  >
+                    <Link
+                      href="/contact"
+                      className="group inline-flex items-center gap-3 rounded-full bg-[#267A9E] px-5 py-2.5 text-[13px] font-semibold text-white shadow-[0_10px_30px_rgba(105,201,243,0.22)] transition-all duration-300 hover:bg-[#034663]"
+                    >
+                      Get Started Now
+                      <motion.span 
+                        whileHover={{ x: 4 }}
+                        className="flex h-7 w-7 items-center justify-center rounded-full bg-white/14 transition-all duration-300"
+                      >
+                        <ArrowRight size={14} />
+                      </motion.span>
+                    </Link>
+                  </motion.div>
+                </div>
+
+                {/* vertical text */}
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: 0.2, duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="absolute left-[-26px] top-[68px] hidden lg:block"
+                >
+                  <span className="text-[10px] font-medium tracking-[0.2em] text-[#86d8ff] [writing-mode:vertical-rl]">
+                    ELITECH DEV
+                  </span>
+                </motion.div>
+              </div>
+            </motion.div>
+
+            {/* Right decoration */}
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="hidden justify-end lg:flex"
+            >
+              <div className="mr-6 flex flex-col items-center">
+                <motion.div 
+                  whileHover={{ scale: 1.1 }}
+                  className="mb-4 flex h-4 w-4 items-center justify-center rounded-full border border-white/70"
+                >
+                  <div className="h-1 w-1 rounded-full bg-white" />
+                </motion.div>
+
+                <div className="h-20 w-px bg-white/35" />
+
+                <div className="mt-3 flex flex-col gap-2">
+                  <motion.span 
+                    whileHover={{ scale: 1.5 }}
+                    className="h-1.5 w-1.5 rounded-full bg-white/95" 
+                  />
+                  <motion.span 
+                    whileHover={{ scale: 1.5 }}
+                    className="h-1.5 w-1.5 rounded-full bg-white/60" 
+                  />
+                  <motion.span 
+                    whileHover={{ scale: 1.5 }}
+                    className="h-1.5 w-1.5 rounded-full bg-white/35" 
+                  />
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* bottom center scroll/mouse hint */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          viewport={{ once: true }}
+          whileHover={{ scale: 1.1 }}
+          className="absolute bottom-[-26px] left-1/2 z-20 -translate-x-1/2"
+        >
+          <div className="flex h-12 w-12 items-center justify-center rounded-full border-[5px] border-white bg-[#f6f6f6] shadow-lg">
+            <div className="flex h-7 w-7 items-start justify-center rounded-full border border-[#c9c9c9] bg-white pt-1">
+              <div className="h-1.5 w-0.5 rounded-full bg-[#9a9a9a]" />
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* ABOUT SECTION */}
+      <section id="about" className="relative overflow-hidden bg-[#f5f6f7] py-24 font-['Poppins',sans-serif]">
+        {/* faded background image */}
+        <div className="absolute inset-0">
+          <Image
+            src={aboutBg}
+            alt="About background"
+            fill
+            className="object-cover opacity-[0.06]"
+          />
+          <div className="absolute inset-0 bg-white/82" />
+        </div>
+
+        {/* soft decorative shapes */}
+        <div className="pointer-events-none absolute left-[10%] top-24 h-72 w-72 rounded-full bg-[#267A9E]/8 blur-3xl" />
+        <div className="pointer-events-none absolute right-[8%] bottom-20 h-80 w-80 rounded-full bg-[#141a47]/6 blur-3xl" />
+
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid items-center gap-16 lg:grid-cols-[1fr_0.95fr]">
+            
+            {/* LEFT IMAGE COLLAGE */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+              className="relative mx-auto min-h-[560px] w-full max-w-[600px]"
+            >
+              {/* thin frame line behind images */}
+              <div className="absolute left-[28%] top-[10%] hidden h-[410px] w-[360px] border-2 border-[#9b1f1f]/70 lg:block" />
+
+              {/* top image */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="absolute left-0 top-0 h-[185px] w-[300px] overflow-hidden shadow-[0_18px_45px_rgba(20,26,71,0.14)] sm:h-[210px] sm:w-[340px]"
+              >
+                <Image
+                  src={aboutImgOne}
+                  alt="Business analytics presentation"
+                  fill
+                  className="object-cover"
+                />
+              </motion.div>
+
+              {/* middle image */}
+              <motion.div
+                initial={{ opacity: 0, y: 35 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.12, duration: 0.6 }}
+                viewport={{ once: true }}
+                className="absolute right-0 top-[155px] z-20 h-[235px] w-[330px] overflow-hidden shadow-[0_20px_55px_rgba(20,26,71,0.20)] sm:h-[260px] sm:w-[370px]"
+              >
+                <Image
+                  src={aboutImgTwo}
+                  alt="Professional using tablet"
+                  fill
+                  className="object-cover"
+                />
+              </motion.div>
+
+              {/* bottom image */}
+              <motion.div
+                initial={{ opacity: 0, y: 35 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.24, duration: 0.6 }}
+                viewport={{ once: true }}
+                className="absolute bottom-0 left-[8%] z-10 h-[245px] w-[360px] overflow-hidden shadow-[0_18px_45px_rgba(20,26,71,0.16)] sm:h-[270px] sm:w-[410px]"
+              >
+                <Image
+                  src={aboutImgThree}
+                  alt="Team collaboration"
+                  fill
+                  className="object-cover"
+                />
+              </motion.div>
+
+              {/* small accent card */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.35, duration: 0.5 }}
+                viewport={{ once: true }}
+                className="absolute left-[42%] top-[65px] z-30 hidden h-[92px] w-[92px] overflow-hidden rounded-full border-[6px] border-white shadow-xl sm:block"
+              >
+                <Image
+                  src={aboutImgFour}
+                  alt="Consulting team"
+                  fill
+                  className="object-cover"
+                />
+              </motion.div>
+            </motion.div>
+
+            {/* RIGHT CONTENT */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              {/* subtle patterned block */}
+              <div className="absolute -left-8 -top-12 hidden h-40 w-52 bg-[repeating-linear-gradient(135deg,rgba(38,122,158,0.08)_0px,rgba(38,122,158,0.08)_1px,transparent_1px,transparent_7px)] lg:block" />
+
+              <div className="relative">
+                <div className="mb-3 flex items-center gap-4">
+                  <span className="text-[13px] font-bold uppercase tracking-wide text-[#267A9E]">
+                    Our Story
+                  </span>
+                  <span className="h-px w-24 bg-[#267A9E]" />
+                </div>
+
+                <h2 className="text-[2.4rem] font-extrabold leading-tight tracking-[-0.04em] text-[#07182d] sm:text-[3.2rem] lg:text-[3.8rem]">
+                  ABOUT{" "}
+                  <span className="font-light tracking-[-0.05em]">
+                    ELITECH DEV
+                  </span>
+                </h2>
+
+                <p className="mt-6 max-w-xl text-[15px] font-medium leading-8 text-[#3f4652]">
+                  We are specialists in software development, digital transformation,
+                  and intelligent business systems.
+                </p>
+
+                <div className="mt-8 space-y-6 text-[14px] leading-8 text-[#606875]">
+                  <p>
+                    With strong technical know-how, we support businesses and
+                    institutions with the design, development, and implementation of
+                    modern digital solutions. Our work focuses on building reliable
+                    web platforms, mobile applications, AI-powered systems, cloud
+                    solutions, and data-driven tools that improve performance and
+                    decision-making.
+                  </p>
+
+                  <p>
+                    Elitech Dev stands for practical innovation, clean engineering,
+                    and long-term value. We work closely with our clients to understand
+                    their operations, solve real problems, and deliver solutions that
+                    are scalable, secure, and easy to use.
+                  </p>
+                </div>
+
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  className="mt-9"
+                >
+                  <Link
+                    href="/about"
+                    className="group inline-flex items-center gap-3 rounded-full bg-[#267A9E] px-6 py-3 text-[14px] font-semibold text-white shadow-[0_14px_35px_rgba(38,122,158,0.25)] transition-all duration-300 hover:bg-[#034663]"
+                  >
+                    Learn More Now
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#0f6f91] transition-all duration-300 group-hover:translate-x-1 group-hover:bg-white/20">
+                      <ArrowRight size={15} />
+                    </span>
                   </Link>
                 </motion.div>
-              );
-            })}
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
