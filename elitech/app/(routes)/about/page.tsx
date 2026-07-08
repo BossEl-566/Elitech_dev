@@ -27,7 +27,7 @@ import aboutBg from "../../assets/aboutpage-bg.png";
 import aboutImgOne from "../../assets/aboutpage-1.png";
 import aboutImgTwo from "../../assets/aboutpage-2.png";
 import aboutImgThree from "../../assets/aboutpage-3.png";
-import founderImg from "../../assets/founder-ceo.jpeg";
+import founderImg from "../../assets/founder-ceo.png";
 import contactBg from "../../assets/contact-bg.png";
 
 const stats = [
