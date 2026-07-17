@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
 import {
   ChevronDown,
@@ -32,6 +32,7 @@ import {
   CreditCard,
   Globe,
 } from "lucide-react";
+
 import logo from "../assets/elitech-logo4.png";
 
 const menuItems = [
@@ -50,10 +51,26 @@ const menuItems = [
         icon: Code2,
         description: "Build robust, scalable applications",
         links: [
-          { name: "Web Development", href: "/service/web-development", icon: Globe },
-          { name: "Mobile App Development", href: "/service/mobile-app-development", icon: Zap },
-          { name: "Desktop Applications", href: "/service/desktop-applications", icon: LayoutDashboard },
-          { name: "Custom Software", href: "/service/custom-software", icon: Code2 },
+          {
+            name: "Web Development",
+            href: "/service/web-development",
+            icon: Globe,
+          },
+          {
+            name: "Mobile App Development",
+            href: "/service/mobile-app-development",
+            icon: Zap,
+          },
+          {
+            name: "Desktop Applications",
+            href: "/service/desktop-applications",
+            icon: LayoutDashboard,
+          },
+          {
+            name: "Custom Software",
+            href: "/service/custom-software",
+            icon: Code2,
+          },
         ],
       },
       {
@@ -61,10 +78,26 @@ const menuItems = [
         icon: Brain,
         description: "Cutting-edge solutions",
         links: [
-          { name: "AI Solutions", href: "/service/ai-solutions", icon: Brain },
-          { name: "Machine Learning", href: "/service/machine-learning", icon: Cpu },
-          { name: "Automation Systems", href: "/service/automation-systems", icon: Zap },
-          { name: "Cloud Integration", href: "/service/cloud-integration", icon: Cloud },
+          {
+            name: "AI Solutions",
+            href: "/service/ai-solutions",
+            icon: Brain,
+          },
+          {
+            name: "Machine Learning",
+            href: "/service/machine-learning",
+            icon: Cpu,
+          },
+          {
+            name: "Automation Systems",
+            href: "/service/automation-systems",
+            icon: Zap,
+          },
+          {
+            name: "Cloud Integration",
+            href: "/service/cloud-integration",
+            icon: Cloud,
+          },
         ],
       },
       {
@@ -72,10 +105,26 @@ const menuItems = [
         icon: Paintbrush,
         description: "Creative & reliable support",
         links: [
-          { name: "UI/UX Design", href: "/service/ui-ux-design", icon: Paintbrush },
-          { name: "Web Design", href: "/service/web-design", icon: LayoutDashboard },
-          { name: "Maintenance & Support", href: "/service/maintenance-support", icon: Shield },
-          { name: "System Upgrades", href: "/service/system-upgrades", icon: Rocket },
+          {
+            name: "UI/UX Design",
+            href: "/service/ui-ux-design",
+            icon: Paintbrush,
+          },
+          {
+            name: "Web Design",
+            href: "/service/web-design",
+            icon: LayoutDashboard,
+          },
+          {
+            name: "Maintenance & Support",
+            href: "/service/maintenance-support",
+            icon: Shield,
+          },
+          {
+            name: "System Upgrades",
+            href: "/service/system-upgrades",
+            icon: Rocket,
+          },
         ],
       },
     ],
@@ -89,10 +138,26 @@ const menuItems = [
         icon: Briefcase,
         description: "Enterprise-grade solutions",
         links: [
-          { name: "Business Management Systems", href: "/solution/business-management-systems", icon: Database },
-          { name: "School Management Systems", href: "/solution/school-management-systems", icon: Users },
-          { name: "Hospital Management Systems", href: "/solution/hospital-management-systems", icon: Shield },
-          { name: "E-commerce Platforms", href: "/solution/ecommerce-platforms", icon: ShoppingBag },
+          {
+            name: "Business Management Systems",
+            href: "/solution/business-management-systems",
+            icon: Database,
+          },
+          {
+            name: "School Management Systems",
+            href: "/solution/school-management-systems",
+            icon: Users,
+          },
+          {
+            name: "Hospital Management Systems",
+            href: "/solution/hospital-management-systems",
+            icon: Shield,
+          },
+          {
+            name: "E-commerce Platforms",
+            href: "/solution/ecommerce-platforms",
+            icon: ShoppingBag,
+          },
         ],
       },
       {
@@ -100,10 +165,26 @@ const menuItems = [
         icon: Sparkles,
         description: "Modern digital experiences",
         links: [
-          { name: "Client Portals", href: "/solution/client-portals", icon: LayoutDashboard },
-          { name: "Booking Platforms", href: "/solution/booking-platforms", icon: Calendar },
-          { name: "Payment Integrations", href: "/solution/payment-integrations", icon: CreditCard },
-          { name: "Admin Dashboards", href: "/solution/admin-dashboards", icon: LayoutDashboard },
+          {
+            name: "Client Portals",
+            href: "/solution/client-portals",
+            icon: LayoutDashboard,
+          },
+          {
+            name: "Booking Platforms",
+            href: "/solution/booking-platforms",
+            icon: Calendar,
+          },
+          {
+            name: "Payment Integrations",
+            href: "/solution/payment-integrations",
+            icon: CreditCard,
+          },
+          {
+            name: "Admin Dashboards",
+            href: "/solution/admin-dashboards",
+            icon: LayoutDashboard,
+          },
         ],
       },
     ],
@@ -117,10 +198,26 @@ const menuItems = [
         icon: FolderGit2,
         description: "Success stories",
         links: [
-          { name: "Case Studies", href: "/projects/case-studies", icon: Star },
-          { name: "Recent Projects", href: "/projects/recent-projects", icon: FolderGit2 },
-          { name: "Industries Served", href: "/projects/industries-served", icon: Briefcase },
-          { name: "Client Success Stories", href: "/projects/client-success-stories", icon: Users },
+          {
+            name: "Case Studies",
+            href: "/projects/case-studies",
+            icon: Star,
+          },
+          {
+            name: "Recent Projects",
+            href: "/projects/recent-projects",
+            icon: FolderGit2,
+          },
+          {
+            name: "Industries Served",
+            href: "/projects/industries-served",
+            icon: Briefcase,
+          },
+          {
+            name: "Client Success Stories",
+            href: "/projects/client-success-stories",
+            icon: Users,
+          },
         ],
       },
     ],
@@ -128,39 +225,98 @@ const menuItems = [
 ];
 
 const simpleLinks = [
-  { label: "About", href: "/about", icon: Info },
-  { label: "Contact", href: "/contact", icon: Mail },
+  {
+    label: "About",
+    href: "/about",
+    icon: Info,
+  },
+  {
+    label: "Contact",
+    href: "/contact",
+    icon: Mail,
+  },
 ];
 
 function Header() {
   const pathname = usePathname();
 
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeMobileDropdown, setActiveMobileDropdown] = useState<string | null>(null);
 
-  const toggleMobileDropdown = (label: string) => {
-    setActiveMobileDropdown((prev) => (prev === label ? null : label));
+  const [activeMobileDropdown, setActiveMobileDropdown] = useState<
+    string | null
+  >(null);
+
+  const [activeDesktopDropdown, setActiveDesktopDropdown] = useState<
+    string | null
+  >(null);
+
+  const closeAllMenus = () => {
+    setMobileOpen(false);
+    setActiveMobileDropdown(null);
+    setActiveDesktopDropdown(null);
   };
 
+  const toggleMobileMenu = () => {
+    setMobileOpen((previousState) => {
+      const nextState = !previousState;
+
+      if (!nextState) {
+        setActiveMobileDropdown(null);
+      }
+
+      return nextState;
+    });
+  };
+
+  const toggleMobileDropdown = (label: string) => {
+    setActiveMobileDropdown((previousDropdown) =>
+      previousDropdown === label ? null : label,
+    );
+  };
+
+  /*
+   * Close every open menu whenever the route changes.
+   *
+   * This handles navigation from:
+   * - desktop dropdown links
+   * - mobile dropdown links
+   * - browser navigation
+   * - programmatic navigation
+   */
+  useEffect(() => {
+    setMobileOpen(false);
+    setActiveMobileDropdown(null);
+    setActiveDesktopDropdown(null);
+  }, [pathname]);
+
   const isPathActive = (href: string) => {
-    if (href === "/") return pathname === "/";
+    if (href === "/") {
+      return pathname === "/";
+    }
+
     return pathname === href;
   };
 
   const isParentActive = (item: (typeof menuItems)[number]) => {
-    if (item.isHome) return pathname === "/";
+    if (item.isHome) {
+      return pathname === "/";
+    }
 
     const childLinks =
-      item.sections?.flatMap((section) => section.links.map((link) => link.href)) ?? [];
+      item.sections?.flatMap((section) =>
+        section.links.map((link) => link.href),
+      ) ?? [];
 
     return pathname === item.href || childLinks.includes(pathname);
   };
 
   const topLevelActiveMap = useMemo(() => {
     const result: Record<string, boolean> = {};
+
     for (const item of menuItems) {
       result[item.label] = isParentActive(item);
     }
+
     return result;
   }, [pathname]);
 
@@ -184,17 +340,16 @@ function Header() {
   const allDesktopItems = [...menuItems, ...simpleLinks];
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-50 w-full font-['Poppins',sans-serif]">
-      {/* Completely transparent background - no gradients, no blur, no lines */}
+    <header className="absolute left-0 right-0 top-0 z-50 w-full font-['Poppins',sans-serif]">
+      {/* Transparent header background */}
       <div className="absolute inset-0 bg-transparent" />
-      
-      {/* Removed: gradient background, backdrop blur, and bottom border line */}
 
       <div className="relative mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:h-24 lg:px-8">
+        {/* LOGO */}
         <Link
           href="/"
+          onClick={closeAllMenus}
           className="flex shrink-0 items-center transition duration-300 hover:opacity-90"
-          onClick={() => setMobileOpen(false)}
         >
           <div className="relative h-10 w-[132px] sm:h-12 sm:w-[150px] lg:h-14 lg:w-[170px]">
             <Image
@@ -207,24 +362,56 @@ function Header() {
           </div>
         </Link>
 
+        {/* DESKTOP NAVIGATION */}
         <div className="hidden items-center gap-8 lg:flex">
           <nav className="flex items-center">
             {allDesktopItems.map((item, index) => {
-              const isMenuItem = "isHome" in item || "sections" in item;
-              const isHomeItem = "isHome" in item && item.isHome;
-              const hasDropdown = "sections" in item && !!item.sections;
+              const isMenuItem =
+                "isHome" in item || "sections" in item;
+
+              const isHomeItem =
+                "isHome" in item && item.isHome;
+
+              const hasDropdown =
+                "sections" in item &&
+                Array.isArray(item.sections) &&
+                item.sections.length > 0;
+
               const isActive = isMenuItem
-                ? topLevelActiveMap[item.label] ?? isPathActive(item.href)
+                ? topLevelActiveMap[item.label] ??
+                  isPathActive(item.href)
                 : isPathActive(item.href);
 
+              const isDesktopDropdownOpen =
+                activeDesktopDropdown === item.label;
+
               return (
-                <div key={item.label} className="group relative flex items-center">
+                <div
+                  key={item.label}
+                  className="relative flex items-center"
+                  onMouseEnter={() => {
+                    if (hasDropdown) {
+                      setActiveDesktopDropdown(item.label);
+                    }
+                  }}
+                  onMouseLeave={() => {
+                    if (hasDropdown) {
+                      setActiveDesktopDropdown(null);
+                    }
+                  }}
+                >
                   <Link
                     href={item.href}
-                    className={`${navLinkBase} ${isActive ? navLinkActive : navLinkInactive}`}
+                    onClick={closeAllMenus}
+                    className={`${navLinkBase} ${
+                      isActive
+                        ? navLinkActive
+                        : navLinkInactive
+                    }`}
                   >
                     <span className="relative">
                       {item.label}
+
                       {isActive && (
                         <span className="absolute -bottom-2 left-1/2 h-[2px] w-6 -translate-x-1/2 rounded-full bg-[#7ED3FF]" />
                       )}
@@ -233,8 +420,14 @@ function Header() {
                     {!isHomeItem && hasDropdown && (
                       <ChevronDown
                         size={15}
-                        className={`transition-transform duration-300 group-hover:rotate-180 ${
-                          isActive ? "text-[#8ED8FF]" : "text-white/70"
+                        className={`transition-transform duration-300 ${
+                          isDesktopDropdownOpen
+                            ? "rotate-180"
+                            : ""
+                        } ${
+                          isActive
+                            ? "text-[#8ED8FF]"
+                            : "text-white/70"
                         }`}
                       />
                     )}
@@ -244,87 +437,132 @@ function Header() {
                     <span className="mx-5 h-4 w-px bg-white/20" />
                   )}
 
-                  {!isHomeItem && hasDropdown && (
-                    <div className="invisible absolute left-1/2 top-full z-50 mt-6 w-[920px] -translate-x-1/2 rounded-[28px] border border-white/10 bg-[#081427]/95 p-6 opacity-0 shadow-[0_20px_70px_rgba(0,0,0,0.45)] backdrop-blur-xl transition-all duration-300 group-hover:visible group-hover:opacity-100">
-                      <div className="mb-5 flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3">
-                        <div>
-                          <p className="text-sm font-semibold text-white">{item.label}</p>
-                          <p className="text-xs text-white/55">
-                            Explore our {item.label.toLowerCase()} offerings
-                          </p>
-                        </div>
-
-                        <Link
-                          href={item.href}
-                          className="inline-flex items-center gap-2 text-sm font-medium text-[#8ED8FF] transition hover:text-white"
-                        >
-                          View All
-                          <ArrowRight size={14} />
-                        </Link>
-                      </div>
-
+                  {/* DESKTOP DROPDOWN */}
+                  {!isHomeItem &&
+                    hasDropdown &&
+                    "sections" in item && (
                       <div
-                        className={`grid gap-5 ${
-                          item.sections.length >= 3 ? "lg:grid-cols-3" : "lg:grid-cols-2"
+                        className={`absolute left-1/2 top-full z-50 w-[920px] -translate-x-1/2 pt-6 transition-all duration-300 ${
+                          isDesktopDropdownOpen
+                            ? "pointer-events-auto visible translate-y-0 opacity-100"
+                            : "pointer-events-none invisible -translate-y-2 opacity-0"
                         }`}
                       >
-                        {item.sections.map((section) => {
-                          const SectionIcon = section.icon;
+                        <div className="rounded-[28px] border border-white/10 bg-[#081427]/95 p-6 shadow-[0_20px_70px_rgba(0,0,0,0.45)] backdrop-blur-xl">
+                          {/* DROPDOWN HEADER */}
+                          <div className="mb-5 flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3">
+                            <div>
+                              <p className="text-sm font-semibold text-white">
+                                {item.label}
+                              </p>
 
-                          return (
-                            <div
-                              key={section.title}
-                              className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition-all duration-300 hover:border-[#55c8ff]/25 hover:bg-white/[0.05]"
-                            >
-                              <div className="mb-4 flex items-start gap-3">
-                                <div className="rounded-xl border border-[#55c8ff]/20 bg-[#55c8ff]/10 p-2.5">
-                                  <SectionIcon size={18} className="text-[#8ED8FF]" />
-                                </div>
-
-                                <div>
-                                  <h3 className="text-sm font-semibold text-white">
-                                    {section.title}
-                                  </h3>
-                                  <p className="mt-1 text-xs leading-5 text-white/55">
-                                    {section.description}
-                                  </p>
-                                </div>
-                              </div>
-
-                              <div className="space-y-2">
-                                {section.links.map((link) => {
-                                  const LinkIcon = link.icon;
-                                  const isChildActive = isPathActive(link.href);
-
-                                  return (
-                                    <Link
-                                      key={link.name}
-                                      href={link.href}
-                                      className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition-all duration-300 ${
-                                        isChildActive
-                                          ? "bg-[#55c8ff]/12 text-[#8ED8FF]"
-                                          : "text-white/78 hover:bg-white/[0.05] hover:text-white"
-                                      }`}
-                                    >
-                                      <LinkIcon size={16} />
-                                      <span>{link.name}</span>
-                                    </Link>
-                                  );
-                                })}
-                              </div>
+                              <p className="text-xs text-white/55">
+                                Explore our{" "}
+                                {item.label.toLowerCase()}{" "}
+                                offerings
+                              </p>
                             </div>
-                          );
-                        })}
+
+                            <Link
+                              href={item.href}
+                              onClick={closeAllMenus}
+                              className="inline-flex items-center gap-2 text-sm font-medium text-[#8ED8FF] transition hover:text-white"
+                            >
+                              View All
+                              <ArrowRight size={14} />
+                            </Link>
+                          </div>
+
+                          {/* DROPDOWN SECTIONS */}
+                          <div
+                            className={`grid gap-5 ${
+                              item.sections.length >= 3
+                                ? "lg:grid-cols-3"
+                                : "lg:grid-cols-2"
+                            }`}
+                          >
+                            {item.sections.map((section) => {
+                              const SectionIcon =
+                                section.icon;
+
+                              return (
+                                <div
+                                  key={section.title}
+                                  className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition-all duration-300 hover:border-[#55c8ff]/25 hover:bg-white/[0.05]"
+                                >
+                                  <div className="mb-4 flex items-start gap-3">
+                                    <div className="rounded-xl border border-[#55c8ff]/20 bg-[#55c8ff]/10 p-2.5">
+                                      <SectionIcon
+                                        size={18}
+                                        className="text-[#8ED8FF]"
+                                      />
+                                    </div>
+
+                                    <div>
+                                      <h3 className="text-sm font-semibold text-white">
+                                        {section.title}
+                                      </h3>
+
+                                      <p className="mt-1 text-xs leading-5 text-white/55">
+                                        {
+                                          section.description
+                                        }
+                                      </p>
+                                    </div>
+                                  </div>
+
+                                  <div className="space-y-2">
+                                    {section.links.map(
+                                      (link) => {
+                                        const LinkIcon =
+                                          link.icon;
+
+                                        const isChildActive =
+                                          isPathActive(
+                                            link.href,
+                                          );
+
+                                        return (
+                                          <Link
+                                            key={link.name}
+                                            href={link.href}
+                                            onClick={
+                                              closeAllMenus
+                                            }
+                                            className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition-all duration-300 ${
+                                              isChildActive
+                                                ? "bg-[#55c8ff]/12 text-[#8ED8FF]"
+                                                : "text-white/78 hover:bg-white/[0.05] hover:text-white"
+                                            }`}
+                                          >
+                                            <LinkIcon
+                                              size={16}
+                                            />
+
+                                            <span>
+                                              {link.name}
+                                            </span>
+                                          </Link>
+                                        );
+                                      },
+                                    )}
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  )}
+                    )}
                 </div>
               );
             })}
           </nav>
 
+          {/* DESKTOP CTA */}
           <Link
             href="/contact"
+            onClick={closeAllMenus}
             className="inline-flex items-center gap-2 rounded-full border border-[#7ed3ff]/35 bg-[#267A9E] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:bg-[#034663] hover:shadow-[0_10px_30px_rgba(83,191,239,0.25)]"
           >
             Get Started
@@ -332,35 +570,58 @@ function Header() {
           </Link>
         </div>
 
+        {/* MOBILE MENU BUTTON */}
         <button
           type="button"
-          onClick={() => setMobileOpen((prev) => !prev)}
+          onClick={toggleMobileMenu}
           className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/10 p-2.5 text-white transition-all duration-300 hover:bg-white/15 lg:hidden"
-          aria-label="Toggle menu"
+          aria-label={
+            mobileOpen
+              ? "Close navigation menu"
+              : "Open navigation menu"
+          }
+          aria-expanded={mobileOpen}
         >
-          {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+          {mobileOpen ? (
+            <X size={22} />
+          ) : (
+            <Menu size={22} />
+          )}
         </button>
       </div>
 
+      {/* MOBILE NAVIGATION */}
       {mobileOpen && (
         <div className="absolute inset-x-0 top-full z-50 bg-[#071325]/95 backdrop-blur-xl lg:hidden">
-          {/* Removed: border-t border-white/10 */}
-          <div className="mx-auto max-w-7xl px-4 py-5 sm:px-6">
+          <div className="mx-auto max-h-[calc(100vh-80px)] max-w-7xl overflow-y-auto px-4 py-5 sm:px-6">
             <nav className="flex flex-col gap-3">
+              {/* MOBILE HOME */}
               <Link
                 href="/"
-                onClick={() => setMobileOpen(false)}
-                className={`${mobileLinkBase} ${pathname === "/" ? mobileActive : mobileInactive}`}
+                onClick={closeAllMenus}
+                className={`${mobileLinkBase} ${
+                  pathname === "/"
+                    ? mobileActive
+                    : mobileInactive
+                }`}
               >
-                <Home size={20} className="text-[#8ED8FF]" />
+                <Home
+                  size={20}
+                  className="text-[#8ED8FF]"
+                />
+
                 Home
               </Link>
 
+              {/* MOBILE DROPDOWNS */}
               {menuItems
                 .filter((item) => !item.isHome)
                 .map((item) => {
-                  const isOpen = activeMobileDropdown === item.label;
-                  const isTopActive = topLevelActiveMap[item.label];
+                  const isOpen =
+                    activeMobileDropdown === item.label;
+
+                  const isTopActive =
+                    topLevelActiveMap[item.label];
 
                   return (
                     <div
@@ -373,25 +634,34 @@ function Header() {
                     >
                       <button
                         type="button"
-                        onClick={() => toggleMobileDropdown(item.label)}
+                        onClick={() =>
+                          toggleMobileDropdown(item.label)
+                        }
                         className={`flex w-full items-center justify-between px-5 py-4 text-left text-base font-medium transition ${
-                          isTopActive ? "text-[#8ED8FF]" : "text-white"
+                          isTopActive
+                            ? "text-[#8ED8FF]"
+                            : "text-white"
                         }`}
+                        aria-expanded={isOpen}
                       >
                         <span>{item.label}</span>
+
                         <ChevronDown
                           size={20}
                           className={`transition-all duration-300 ${
-                            isOpen ? "rotate-180 text-[#8ED8FF]" : "text-white/70"
+                            isOpen
+                              ? "rotate-180 text-[#8ED8FF]"
+                              : "text-white/70"
                           }`}
                         />
                       </button>
 
                       {isOpen && (
                         <div className="space-y-5 border-t border-white/10 px-5 py-5">
+                          {/* VIEW ALL */}
                           <Link
                             href={item.href}
-                            onClick={() => setMobileOpen(false)}
+                            onClick={closeAllMenus}
                             className={`block rounded-xl px-4 py-3 text-sm font-medium transition-all duration-300 ${
                               isPathActive(item.href)
                                 ? "bg-[#55c8ff]/12 text-[#8ED8FF]"
@@ -401,44 +671,65 @@ function Header() {
                             View All {item.label}
                           </Link>
 
+                          {/* MOBILE SECTIONS */}
                           {item.sections?.map((section) => {
-                            const SectionIcon = section.icon;
+                            const SectionIcon =
+                              section.icon;
 
                             return (
                               <div key={section.title}>
                                 <div className="mb-3 flex items-center gap-2">
-                                  <SectionIcon size={18} className="text-[#8ED8FF]" />
+                                  <SectionIcon
+                                    size={18}
+                                    className="text-[#8ED8FF]"
+                                  />
+
                                   <div>
                                     <h3 className="text-sm font-semibold text-[#8ED8FF]">
                                       {section.title}
                                     </h3>
+
                                     <p className="text-xs text-white/55">
-                                      {section.description}
+                                      {
+                                        section.description
+                                      }
                                     </p>
                                   </div>
                                 </div>
 
                                 <div className="ml-2 space-y-2">
-                                  {section.links.map((link) => {
-                                    const LinkIcon = link.icon;
-                                    const isChildActive = isPathActive(link.href);
+                                  {section.links.map(
+                                    (link) => {
+                                      const LinkIcon =
+                                        link.icon;
 
-                                    return (
-                                      <Link
-                                        key={link.name}
-                                        href={link.href}
-                                        onClick={() => setMobileOpen(false)}
-                                        className={`flex items-center gap-3 rounded-xl px-4 py-2.5 text-sm transition-all duration-300 ${
-                                          isChildActive
-                                            ? "bg-[#55c8ff]/12 text-[#8ED8FF]"
-                                            : "text-white/80 hover:bg-white/10 hover:text-white"
-                                        }`}
-                                      >
-                                        <LinkIcon size={16} />
-                                        {link.name}
-                                      </Link>
-                                    );
-                                  })}
+                                      const isChildActive =
+                                        isPathActive(
+                                          link.href,
+                                        );
+
+                                      return (
+                                        <Link
+                                          key={link.name}
+                                          href={link.href}
+                                          onClick={
+                                            closeAllMenus
+                                          }
+                                          className={`flex items-center gap-3 rounded-xl px-4 py-2.5 text-sm transition-all duration-300 ${
+                                            isChildActive
+                                              ? "bg-[#55c8ff]/12 text-[#8ED8FF]"
+                                              : "text-white/80 hover:bg-white/10 hover:text-white"
+                                          }`}
+                                        >
+                                          <LinkIcon
+                                            size={16}
+                                          />
+
+                                          {link.name}
+                                        </Link>
+                                      );
+                                    },
+                                  )}
                                 </div>
                               </div>
                             );
@@ -449,24 +740,36 @@ function Header() {
                   );
                 })}
 
+              {/* SIMPLE MOBILE LINKS */}
               {simpleLinks.map((link) => {
+                const LinkIcon = link.icon;
                 const isActive = isPathActive(link.href);
 
                 return (
                   <Link
                     key={link.label}
                     href={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    className={`${mobileLinkBase} ${isActive ? mobileActive : mobileInactive}`}
+                    onClick={closeAllMenus}
+                    className={`${mobileLinkBase} ${
+                      isActive
+                        ? mobileActive
+                        : mobileInactive
+                    }`}
                   >
+                    <LinkIcon
+                      size={20}
+                      className="text-[#8ED8FF]"
+                    />
+
                     {link.label}
                   </Link>
                 );
               })}
 
+              {/* MOBILE CTA */}
               <Link
                 href="/contact"
-                onClick={() => setMobileOpen(false)}
+                onClick={closeAllMenus}
                 className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[#267A9E] px-6 py-4 text-base font-semibold text-white transition-all duration-300 hover:bg-[#034663]"
               >
                 Get Started
