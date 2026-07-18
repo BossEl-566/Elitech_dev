@@ -1304,6 +1304,7 @@ export default function IndustriesServedPage() {
 
                   <p className="mt-4 text-sm leading-7 text-[#69757f]">
                     {step.description}
+                    
                   </p>
                 </motion.div>
               );

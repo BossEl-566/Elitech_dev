@@ -83,7 +83,7 @@ function WebDevelopmentPage() {
               </Link>
 
               <Link
-                href="/projects"
+                href="/project"
                 className="inline-flex items-center gap-3 rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:border-[#7ed3ff] hover:text-[#7ed3ff]"
               >
                 View Projects
