@@ -13,10 +13,6 @@ import {
   Brain,
   LayoutDashboard,
   Paintbrush,
-  Shield,
-  Rocket,
-  ShoppingBag,
-  CreditCard,
 } from "lucide-react";
 import {
   FaFacebookF,
