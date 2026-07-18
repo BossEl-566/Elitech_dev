@@ -11,7 +11,6 @@ import {
 } from "lucide-react";
 import {
   Brain,
-  LayoutDashboard,
   Paintbrush,
 } from "lucide-react";
 import {
