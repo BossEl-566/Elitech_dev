@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { 
   ArrowRight, Star, Code2, Layers3, ShieldCheck, Users, Clock, Zap, Sparkles,
-  Briefcase, FolderGit2, Mail, Phone, MapPin, CheckCircle, Play, Quote, Cpu, Cloud, Database, Smartphone,
+  Briefcase, FolderGit2, CheckCircle, Play, Quote, Cpu, Cloud, Database, Smartphone,
   Globe, TrendingUp, Heart, Award, MessageCircle, Calendar, ChevronRight
 } from "lucide-react";
 import {
