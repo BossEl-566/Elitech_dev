@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { 
-  ArrowRight, Star, Code2, Layers3, ShieldCheck, Users, Clock, Zap, Sparkles,
-  Briefcase, FolderGit2, CheckCircle, Play, Quote, Cpu, Cloud, Database, Smartphone,
-  Globe, TrendingUp, Heart, Award, MessageCircle, Calendar, ChevronRight
+  ArrowRight, Star, Code2, Layers3, ShieldCheck, Users, Sparkles,
+  Briefcase, FolderGit2, CheckCircle, Cpu, Cloud, Database, Smartphone,
+  Globe,  Award, ChevronRight
 } from "lucide-react";
 import {
   Brain,
